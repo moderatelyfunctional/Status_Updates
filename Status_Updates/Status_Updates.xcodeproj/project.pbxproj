@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC9F5FB31FF190EC006AADE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FB21FF190EC006AADE0 /* AppDelegate.swift */; };
-		DC9F5FB51FF190EC006AADE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FB41FF190EC006AADE0 /* Assets.xcassets */; };
-		DC9F5FB81FF190EC006AADE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FB61FF190EC006AADE0 /* MainMenu.xib */; };
+		DC9F5FD21FF1B353006AADE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */; };
+		DC9F5FD41FF1B353006AADE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */; };
+		DC9F5FD71FF1B353006AADE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */; };
+		DC9F5FDF1FF1B476006AADE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC9F5FAF1FF190EC006AADE0 /* MITConfessions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MITConfessions.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC9F5FB21FF190EC006AADE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC9F5FB41FF190EC006AADE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC9F5FB71FF190EC006AADE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		DC9F5FB91FF190EC006AADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9F5FCE1FF1B353006AADE0 /* Status_Updates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Status_Updates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC9F5FD61FF1B353006AADE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DC9F5FD81FF1B353006AADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC9F5FAC1FF190EC006AADE0 /* Frameworks */ = {
+		DC9F5FCB1FF1B353006AADE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,71 +33,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC9F5FA61FF190EC006AADE0 = {
+		DC9F5FC51FF1B353006AADE0 = {
 			isa = PBXGroup;
 			children = (
-				DC9F5FB11FF190EC006AADE0 /* MITConfessions */,
-				DC9F5FB01FF190EC006AADE0 /* Products */,
+				DC9F5FD01FF1B353006AADE0 /* Status_Updates */,
+				DC9F5FCF1FF1B353006AADE0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DC9F5FB01FF190EC006AADE0 /* Products */ = {
+		DC9F5FCF1FF1B353006AADE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC9F5FAF1FF190EC006AADE0 /* MITConfessions.app */,
+				DC9F5FCE1FF1B353006AADE0 /* Status_Updates.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC9F5FB11FF190EC006AADE0 /* MITConfessions */ = {
+		DC9F5FD01FF1B353006AADE0 /* Status_Updates */ = {
 			isa = PBXGroup;
 			children = (
-				DC9F5FB21FF190EC006AADE0 /* AppDelegate.swift */,
-				DC9F5FB41FF190EC006AADE0 /* Assets.xcassets */,
-				DC9F5FB61FF190EC006AADE0 /* MainMenu.xib */,
-				DC9F5FB91FF190EC006AADE0 /* Info.plist */,
+				DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */,
+				DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */,
+				DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */,
+				DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */,
+				DC9F5FD81FF1B353006AADE0 /* Info.plist */,
 			);
-			path = MITConfessions;
+			path = Status_Updates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC9F5FAE1FF190EC006AADE0 /* MITConfessions */ = {
+		DC9F5FCD1FF1B353006AADE0 /* Status_Updates */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC9F5FBC1FF190EC006AADE0 /* Build configuration list for PBXNativeTarget "MITConfessions" */;
+			buildConfigurationList = DC9F5FDB1FF1B353006AADE0 /* Build configuration list for PBXNativeTarget "Status_Updates" */;
 			buildPhases = (
-				DC9F5FAB1FF190EC006AADE0 /* Sources */,
-				DC9F5FAC1FF190EC006AADE0 /* Frameworks */,
-				DC9F5FAD1FF190EC006AADE0 /* Resources */,
+				DC9F5FCA1FF1B353006AADE0 /* Sources */,
+				DC9F5FCB1FF1B353006AADE0 /* Frameworks */,
+				DC9F5FCC1FF1B353006AADE0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MITConfessions;
-			productName = MITConfessions;
-			productReference = DC9F5FAF1FF190EC006AADE0 /* MITConfessions.app */;
+			name = Status_Updates;
+			productName = Status_Updates;
+			productReference = DC9F5FCE1FF1B353006AADE0 /* Status_Updates.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DC9F5FA71FF190EC006AADE0 /* Project object */ = {
+		DC9F5FC61FF1B353006AADE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Jing Lin";
 				TargetAttributes = {
-					DC9F5FAE1FF190EC006AADE0 = {
+					DC9F5FCD1FF1B353006AADE0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 42K23B473V;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = DC9F5FAA1FF190EC006AADE0 /* Build configuration list for PBXProject "MITConfessions" */;
+			buildConfigurationList = DC9F5FC91FF1B353006AADE0 /* Build configuration list for PBXProject "Status_Updates" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -103,44 +106,45 @@
 				en,
 				Base,
 			);
-			mainGroup = DC9F5FA61FF190EC006AADE0;
-			productRefGroup = DC9F5FB01FF190EC006AADE0 /* Products */;
+			mainGroup = DC9F5FC51FF1B353006AADE0;
+			productRefGroup = DC9F5FCF1FF1B353006AADE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC9F5FAE1FF190EC006AADE0 /* MITConfessions */,
+				DC9F5FCD1FF1B353006AADE0 /* Status_Updates */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DC9F5FAD1FF190EC006AADE0 /* Resources */ = {
+		DC9F5FCC1FF1B353006AADE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9F5FB51FF190EC006AADE0 /* Assets.xcassets in Resources */,
-				DC9F5FB81FF190EC006AADE0 /* MainMenu.xib in Resources */,
+				DC9F5FD41FF1B353006AADE0 /* Assets.xcassets in Resources */,
+				DC9F5FD71FF1B353006AADE0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DC9F5FAB1FF190EC006AADE0 /* Sources */ = {
+		DC9F5FCA1FF1B353006AADE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9F5FB31FF190EC006AADE0 /* AppDelegate.swift in Sources */,
+				DC9F5FDF1FF1B476006AADE0 /* StatusMenuController.swift in Sources */,
+				DC9F5FD21FF1B353006AADE0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DC9F5FB61FF190EC006AADE0 /* MainMenu.xib */ = {
+		DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DC9F5FB71FF190EC006AADE0 /* Base */,
+				DC9F5FD61FF1B353006AADE0 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -148,7 +152,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DC9F5FBA1FF190EC006AADE0 /* Debug */ = {
+		DC9F5FD91FF1B353006AADE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +201,7 @@
 			};
 			name = Debug;
 		};
-		DC9F5FBB1FF190EC006AADE0 /* Release */ = {
+		DC9F5FDA1FF1B353006AADE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,29 +242,29 @@
 			};
 			name = Release;
 		};
-		DC9F5FBD1FF190EC006AADE0 /* Debug */ = {
+		DC9F5FDC1FF1B353006AADE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 42K23B473V;
-				INFOPLIST_FILE = MITConfessions/Info.plist;
+				INFOPLIST_FILE = Status_Updates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = moderatelyfunctionalprogrammers.MITConfessions;
+				PRODUCT_BUNDLE_IDENTIFIER = "moderatelyfunctionalprogrammers.Status-Updates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		DC9F5FBE1FF190EC006AADE0 /* Release */ = {
+		DC9F5FDD1FF1B353006AADE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 42K23B473V;
-				INFOPLIST_FILE = MITConfessions/Info.plist;
+				INFOPLIST_FILE = Status_Updates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = moderatelyfunctionalprogrammers.MITConfessions;
+				PRODUCT_BUNDLE_IDENTIFIER = "moderatelyfunctionalprogrammers.Status-Updates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -269,24 +273,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC9F5FAA1FF190EC006AADE0 /* Build configuration list for PBXProject "MITConfessions" */ = {
+		DC9F5FC91FF1B353006AADE0 /* Build configuration list for PBXProject "Status_Updates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC9F5FBA1FF190EC006AADE0 /* Debug */,
-				DC9F5FBB1FF190EC006AADE0 /* Release */,
+				DC9F5FD91FF1B353006AADE0 /* Debug */,
+				DC9F5FDA1FF1B353006AADE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC9F5FBC1FF190EC006AADE0 /* Build configuration list for PBXNativeTarget "MITConfessions" */ = {
+		DC9F5FDB1FF1B353006AADE0 /* Build configuration list for PBXNativeTarget "Status_Updates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC9F5FBD1FF190EC006AADE0 /* Debug */,
-				DC9F5FBE1FF190EC006AADE0 /* Release */,
+				DC9F5FDC1FF1B353006AADE0 /* Debug */,
+				DC9F5FDD1FF1B353006AADE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DC9F5FA71FF190EC006AADE0 /* Project object */;
+	rootObject = DC9F5FC61FF1B353006AADE0 /* Project object */;
 }

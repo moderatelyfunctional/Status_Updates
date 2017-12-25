@@ -12,19 +12,19 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MITConfessions" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Status_Updates" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="YGR-iV-2qE" customClass="StatusMenuController" customModule="Status_Updates" customModuleProvider="target">
             <connections>
-                <outlet property="quitClicked" destination="bMZ-y7-piz" id="8FY-rr-h92"/>
-                <outlet property="statusMenu" destination="YF7-Fr-YV2" id="E6f-4s-m1G"/>
+                <outlet property="statusMenu" destination="Wjy-0a-9D3" id="4U3-vc-b3f"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu id="YF7-Fr-YV2">
+        <menu id="Wjy-0a-9D3">
             <items>
-                <menuItem title="Quit" id="bMZ-y7-piz">
+                <menuItem title="Quit" id="9id-dW-5ea">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="UQp-D5-HXK"/>
+                        <action selector="quitClickedWithSender:" target="YGR-iV-2qE" id="Zmg-v3-NnW"/>
                     </connections>
                 </menuItem>
             </items>
