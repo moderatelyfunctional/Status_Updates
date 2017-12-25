@@ -11,6 +11,8 @@
 		DC9F5FD41FF1B353006AADE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */; };
 		DC9F5FD71FF1B353006AADE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */; };
 		DC9F5FDF1FF1B476006AADE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */; };
+		DC9F5FE11FF1C2D7006AADE0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FE01FF1C2D7006AADE0 /* WeatherAPI.swift */; };
+		DC9F5FE31FF1C346006AADE0 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FE21FF1C346006AADE0 /* KEYS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		DC9F5FD61FF1B353006AADE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DC9F5FD81FF1B353006AADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		DC9F5FE01FF1C2D7006AADE0 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		DC9F5FE21FF1C346006AADE0 /* KEYS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */,
 				DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */,
 				DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */,
+				DC9F5FE01FF1C2D7006AADE0 /* WeatherAPI.swift */,
+				DC9F5FE21FF1C346006AADE0 /* KEYS.swift */,
 				DC9F5FD81FF1B353006AADE0 /* Info.plist */,
 			);
 			path = Status_Updates;
@@ -133,6 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9F5FE11FF1C2D7006AADE0 /* WeatherAPI.swift in Sources */,
+				DC9F5FE31FF1C346006AADE0 /* KEYS.swift in Sources */,
 				DC9F5FDF1FF1B476006AADE0 /* StatusMenuController.swift in Sources */,
 				DC9F5FD21FF1B353006AADE0 /* AppDelegate.swift in Sources */,
 			);
