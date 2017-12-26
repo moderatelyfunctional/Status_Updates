@@ -13,6 +13,7 @@ class StatusMenuController: NSObject {
     let weatherAPI = WeatherAPI()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
+    @IBOutlet weak var weatherItem: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     
     @IBAction func quitClicked(sender: NSMenuItem) {
@@ -20,7 +21,9 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        weatherAPI.fetchWeather("Boston")
+        weatherAPI.fetchWeather("Boston") { weather in
+            self.weatherItem.title = weather.description
+        }
     }
     
     override func awakeFromNib() {
@@ -29,6 +32,8 @@ class StatusMenuController: NSObject {
         
         self.statusItem.image = icon
         self.statusItem.menu = statusMenu
+        
+        weatherItem.view = WeatherView()
     }
     
 }
