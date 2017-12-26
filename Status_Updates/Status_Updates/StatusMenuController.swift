@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 
 //    let weatherAPI = WeatherAPI()
     let fbPageAPI = FBPageAPI()
@@ -54,6 +54,7 @@ class StatusMenuController: NSObject {
         
 //        weatherItem.view = WeatherView()
 //        weatherItem.view = PageView()
+        
         weatherItem.view = PagesTableView()
         
         

@@ -40,6 +40,8 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
         
         self.layer?.backgroundColor = NSColor.cyan.cgColor
         
+        self.addTableColumn(NSTableColumn(identifier: "First"))
+        
         self.delegate = self
         self.dataSource = self
     }
@@ -51,11 +53,7 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.PageList.count
     }
-    
-    func tableView(_ tableView: NSTableView, dataCellFor tableColumn: NSTableColumn?, row: Int) -> NSCell? {
-        return nil
-    }
-    
+        
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return nil
     }
