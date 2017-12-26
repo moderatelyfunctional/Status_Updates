@@ -21,6 +21,13 @@
         </customObject>
         <menu id="Wjy-0a-9D3">
             <items>
+                <menuItem title="Update" id="Iho-CS-Gat">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateClicked:" target="YGR-iV-2qE" id="cXC-DI-YEw"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="scS-4R-sh2"/>
                 <menuItem title="Quit" id="9id-dW-5ea">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

@@ -10,12 +10,17 @@ import Cocoa
 
 class StatusMenuController: NSObject {
 
+    let weatherAPI = WeatherAPI()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     @IBOutlet weak var statusMenu: NSMenu!
     
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSApplication.shared().terminate(self)
+    }
+    
+    @IBAction func updateClicked(_ sender: NSMenuItem) {
+        weatherAPI.fetchWeather("Boston")
     }
     
     override func awakeFromNib() {
