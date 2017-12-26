@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Status_Updates/FBPageAPI.swift"
+            timestampString = "535966065.75564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchPage(_:success:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Status_Updates.FBPageAPI.fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()"
+                  moduleName = "Status_Updates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
+                  timestampString = "535966066.14864"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2222">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Status_Updates.FBPageAPI.(fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Status_Updates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
+                  timestampString = "535966066.151745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
