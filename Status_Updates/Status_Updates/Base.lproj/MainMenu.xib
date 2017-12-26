@@ -33,6 +33,13 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="5P6-Mx-tCF"/>
+                <menuItem title="Preferences" id="29Y-gm-sRc" userLabel="Preferences">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="YGR-iV-2qE" id="9Fn-RA-THn"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="5iI-B5-h0V"/>
                 <menuItem title="Quit" id="9id-dW-5ea">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

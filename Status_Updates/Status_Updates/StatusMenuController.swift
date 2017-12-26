@@ -16,9 +16,17 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var weatherItem: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     
+    let preferencesWindow = PreferencesWindow()
+    
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSApplication.shared().terminate(self)
     }
+    
+    @IBAction func preferencesClicked(_ sender: NSMenuItem) {
+        NSApp.activate(ignoringOtherApps: true)
+        self.preferencesWindow.showWindow(nil)
+    }
+
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
         weatherAPI.fetchWeather("Boston") { weather in
