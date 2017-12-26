@@ -10,17 +10,17 @@ import Cocoa
 
 class WeatherView: NSView {
     
-    let city = NSTextField(frame: NSRect(x: 20, y: 0, width: 180, height: 20))
+    let city = WeatherField(frame: NSRect(x: 20, y: 27, width: 180, height: 20))
+    let currentConditions = WeatherField(frame: NSRect(x: 20, y: 5, width: 180, height: 20))
     
     init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: 200, height: 90))
+        super.init(frame: NSRect(x: 0, y: 0, width: 200, height: 47))
         
-        self.city.stringValue = "Quit"
-        self.city.isBordered = false
-        self.city.font = NSFont(name: "Helvetica Neue", size: 14)
-        self.city.backgroundColor = NSColor.clear
+        self.city.stringValue = "Boston"
+        self.currentConditions.stringValue = "22.4F Cloudy"
         
         self.addSubview(self.city)
+        self.addSubview(self.currentConditions)
     }
     
     required init?(coder: NSCoder) {

@@ -15,6 +15,10 @@ struct Weather {
     var currentTemp:Float
     var conditions:String
     
+    var tempCondition:String {
+        return "\(currentTemp)F and \(conditions)"
+    }
+    
     var description:String {
         return "\(city): \(currentTemp)F and \(conditions)"
     }

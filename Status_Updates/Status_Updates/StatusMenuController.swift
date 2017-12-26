@@ -22,7 +22,9 @@ class StatusMenuController: NSObject {
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
         weatherAPI.fetchWeather("Boston") { weather in
-            self.weatherItem.title = weather.description
+            let weatherView = self.weatherItem.view as! WeatherView
+            weatherView.city.stringValue = weather.city
+            weatherView.currentConditions.stringValue = weather.tempCondition
         }
     }
     
