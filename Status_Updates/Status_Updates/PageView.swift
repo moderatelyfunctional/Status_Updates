@@ -15,8 +15,9 @@ class PageView: NSView {
     init() {
         super.init(frame: NSRect(x: 0, y: 0, width: 200, height: 30))
         
-        self.summary.stringValue = "Timely Fessions"
+        self.summary.stringValue = "Updates"
         
+        self.layer?.backgroundColor = NSColor.blue.cgColor
         self.addSubview(self.summary)
     }
     

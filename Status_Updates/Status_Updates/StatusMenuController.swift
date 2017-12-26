@@ -31,15 +31,18 @@ class StatusMenuController: NSObject {
 
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
+        let pageTableView = self.weatherItem.view as! PagesTableView
+        pageTableView.reloadData()
+
 //        weatherAPI.fetchWeather("Boston") { weather in
 //            let weatherView = self.weatherItem.view as! WeatherView
 //            weatherView.city.stringValue = weather.city
 //            weatherView.currentConditions.stringValue = weather.tempCondition
 //        }
-        fbPageAPI.fetchPage("beaverconfessions") { page in
-            let pageView = self.weatherItem.view as! PageView
-            pageView.summary.stringValue = page.prettyPage
-        }
+//        fbPageAPI.fetchPage("beaverconfessions") { page in
+//            let pageView = self.weatherItem.view as! PageView
+//            pageView.summary.stringValue = page.prettyPage
+//        }
     }
     
     override func awakeFromNib() {
@@ -50,7 +53,18 @@ class StatusMenuController: NSObject {
         self.statusItem.menu = statusMenu
         
 //        weatherItem.view = WeatherView()
-        weatherItem.view = PageView()
+//        weatherItem.view = PageView()
+        weatherItem.view = PagesTableView()
+        
+        
     }
     
 }
+
+
+
+
+
+
+
+
