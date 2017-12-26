@@ -1,14 +1,14 @@
 //
-//  TextLabel.swift
+//  WeatherItem.swift
 //  Status_Updates
 //
-//  Created by Jing Lin on 12/26/17.
+//  Created by Jing Lin on 12/25/17.
 //  Copyright © 2017 Jing Lin. All rights reserved.
 //
 
 import Cocoa
 
-class TextLabel: NSTextField {
+class PageField: NSTextField {
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)

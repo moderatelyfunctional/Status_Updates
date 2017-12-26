@@ -10,10 +10,12 @@ import Cocoa
 
 class StatusMenuController: NSObject {
 
-    let weatherAPI = WeatherAPI()
+//    let weatherAPI = WeatherAPI()
+    let fbPageAPI = FBPageAPI()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     @IBOutlet weak var weatherItem: NSMenuItem!
+//    @IBOutlet weak var pageItem: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     
     let preferencesWindow = PreferencesWindow()
@@ -29,10 +31,14 @@ class StatusMenuController: NSObject {
 
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        weatherAPI.fetchWeather("Boston") { weather in
-            let weatherView = self.weatherItem.view as! WeatherView
-            weatherView.city.stringValue = weather.city
-            weatherView.currentConditions.stringValue = weather.tempCondition
+//        weatherAPI.fetchWeather("Boston") { weather in
+//            let weatherView = self.weatherItem.view as! WeatherView
+//            weatherView.city.stringValue = weather.city
+//            weatherView.currentConditions.stringValue = weather.tempCondition
+//        }
+        fbPageAPI.fetchPage("beaverconfessions") { page in
+            let pageView = self.weatherItem.view as! PageView
+            pageView.summary.stringValue = page.prettyPage
         }
     }
     
@@ -43,7 +49,8 @@ class StatusMenuController: NSObject {
         self.statusItem.image = icon
         self.statusItem.menu = statusMenu
         
-        weatherItem.view = WeatherView()
+//        weatherItem.view = WeatherView()
+        weatherItem.view = PageView()
     }
     
 }
