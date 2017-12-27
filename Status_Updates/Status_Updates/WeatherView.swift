@@ -10,8 +10,8 @@ import Cocoa
 
 class WeatherView: NSView {
     
-    let city = WeatherField(frame: NSRect(x: 20, y: 27, width: 180, height: 20))
-    let currentConditions = WeatherField(frame: NSRect(x: 20, y: 5, width: 180, height: 20))
+    let city = TextLabel(frame: NSRect(x: 20, y: 27, width: 180, height: 20))
+    let currentConditions = TextLabel(frame: NSRect(x: 20, y: 5, width: 180, height: 20))
     
     init() {
         super.init(frame: NSRect(x: 0, y: 0, width: 200, height: 47))
