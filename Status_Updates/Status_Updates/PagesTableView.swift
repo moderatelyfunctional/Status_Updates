@@ -10,19 +10,7 @@ import Cocoa
 
 class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     
-    let PageList = [PageData(name: "MIT Confessions",
-                             likes: 18940,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "Overheard At MIT",
-                             likes: 2242,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "MIT Onion",
-                             likes: 18940,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "Overheard At MIT",
-                             likes: 2242,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "MIT Onion",
+    let pageList = [PageData(name: "MIT Confessions",
                              likes: 18940,
                              updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
                     PageData(name: "Overheard At MIT",
@@ -31,16 +19,17 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
                     PageData(name: "MIT Onion",
                              likes: 18940,
                              updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!))
-
     ]
-
     
     init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: 300, height: 400))
+        super.init(frame: NSRect(x: 0, y: 0, width: 450, height: 400))
         
-        self.layer?.backgroundColor = NSColor.cyan.cgColor
-        
-        self.addTableColumn(NSTableColumn(identifier: "First"))
+        let column = NSTableColumn()
+        column.resizingMask = .autoresizingMask
+        column.width = 200
+        self.addTableColumn(column)
+        self.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+        self.sizeLastColumnToFit()
         
         self.delegate = self
         self.dataSource = self
@@ -51,15 +40,15 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.PageList.count
+        return self.pageList.count
     }
-        
+    
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return nil
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        return PageView()
+        return PageView(page: self.pageList[row])
     }
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {

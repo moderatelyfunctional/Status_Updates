@@ -10,12 +10,12 @@ import Cocoa
 
 class PageView: NSView {
 
-    let summary = PageField(frame: NSRect(x: 20, y: 5, width: 180, height: 20))
+    let summary = PageField(frame: NSRect(x: 20, y: 5, width: 450, height: 20))
     
-    init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: 200, height: 30))
+    init(page: PageData) {
+        super.init(frame: NSRect(x: 0, y: 0, width: 450, height: 30))
         
-        self.summary.stringValue = "Updates"
+        self.summary.stringValue = page.name
         
         self.layer?.backgroundColor = NSColor.blue.cgColor
         self.addSubview(self.summary)

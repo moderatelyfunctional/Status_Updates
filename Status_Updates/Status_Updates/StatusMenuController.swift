@@ -52,12 +52,7 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
         self.statusItem.image = icon
         self.statusItem.menu = statusMenu
         
-//        weatherItem.view = WeatherView()
-//        weatherItem.view = PageView()
-        
         weatherItem.view = PagesTableView()
-        
-        
     }
     
 }
