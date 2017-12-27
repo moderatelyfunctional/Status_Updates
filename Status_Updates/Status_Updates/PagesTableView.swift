@@ -22,17 +22,15 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     ]
     
     init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: 450, height: 400))
+        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: 400))
         
         let column = NSTableColumn()
         column.resizingMask = .autoresizingMask
-        column.width = 200
+        column.width = Cons.PageView.width
+        
         
         self.addTableColumn(column)
-//        self.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
-//        self.sizeLastColumnToFit()
         self.backgroundColor = NSColor.clear
-
         
         self.delegate = self
         self.dataSource = self
@@ -46,22 +44,14 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
         return self.pageList.count
     }
     
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        return nil
-    }
-    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         return PageView(page: self.pageList[row])
     }
     
-    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        return nil
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return Cons.PageView.height
     }
     
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 80
-    }
-
 }
 
 

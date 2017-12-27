@@ -9,11 +9,15 @@
 import Cocoa
 
 class PageView: NSView {
-
-    let summary = PageField(frame: NSRect(x: 20, y: 5, width: 450, height: 20))
+    
+    let name = TextLabel(frame: NSRect(x: Cons.PageView.offsetX,
+                                       y: Cons.PageView.offsetY,
+                                       width: Cons.PageView.width - Cons.PageView.offsetX,
+                                       height: Cons.PageView.nameHeight))
+    
     
     init(page: PageData) {
-        super.init(frame: NSRect(x: 0, y: 0, width: 450, height: 30))
+        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: Cons.PageView.height))
         
         self.summary.stringValue = page.name
         self.layer?.backgroundColor = NSColor.clear.cgColor
