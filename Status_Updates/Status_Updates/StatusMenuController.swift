@@ -29,10 +29,7 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     }
 
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        for pageData in PageList.sharedInstance.data {
-            // call the API on each page and load the data back into PageList
-        }
-        
+        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "TheMITOnion"])
         let pageScroller = self.pagesItem.view as! PageScroller
         let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()

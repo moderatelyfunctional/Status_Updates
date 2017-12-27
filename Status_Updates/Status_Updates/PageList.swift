@@ -14,10 +14,10 @@ final class PageList {
     var data = [PageData]()
     
     private init() {
-        self.data = fetchData(pages: ["beaverconfessions", "overheardatmit", "TheMITOnion"])
+        self.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "TheMITOnion"])
     }
 
-    private func fetchData(pages: [String]) -> [PageData] {
+    static func fetchData(pages: [String]) -> [PageData] {
         var pageDataList = [PageData]()
         let fbPageAPI = FBPageAPI()
         let group = DispatchGroup()

@@ -33,7 +33,7 @@ class PageView: NSView {
     init(page: PageData) {
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: Cons.PageView.height))
         
-        let hoursAgo = NSDate.hoursPrior(currDate: page.updated)
+        let hoursAgo = -1 * NSDate.hoursPrior(currDate: page.updated)
         
         self.name.stringValue = page.name
         self.likes.stringValue = "\(page.likes) Likes"
