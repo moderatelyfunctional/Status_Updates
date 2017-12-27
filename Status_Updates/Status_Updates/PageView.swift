@@ -16,8 +16,8 @@ class PageView: NSView {
         super.init(frame: NSRect(x: 0, y: 0, width: 450, height: 30))
         
         self.summary.stringValue = page.name
+        self.layer?.backgroundColor = NSColor.clear.cgColor
         
-        self.layer?.backgroundColor = NSColor.blue.cgColor
         self.addSubview(self.summary)
     }
     

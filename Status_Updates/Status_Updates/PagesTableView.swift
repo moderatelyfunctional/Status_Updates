@@ -27,9 +27,12 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
         let column = NSTableColumn()
         column.resizingMask = .autoresizingMask
         column.width = 200
+        
         self.addTableColumn(column)
-        self.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
-        self.sizeLastColumnToFit()
+//        self.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+//        self.sizeLastColumnToFit()
+        self.backgroundColor = NSColor.clear
+
         
         self.delegate = self
         self.dataSource = self
