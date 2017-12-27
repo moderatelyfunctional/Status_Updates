@@ -36,11 +36,6 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
         let pageScroller = self.pagesItem.view as! PageScroller
         let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()
-
-//        fbPageAPI.fetchPage("beaverconfessions") { page in
-//            let pageView = self.weatherItem.view as! PageView
-//            pageView.summary.stringValue = page.prettyPage
-//        }
     }
     
     override func awakeFromNib() {

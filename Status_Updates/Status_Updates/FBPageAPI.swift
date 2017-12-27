@@ -33,13 +33,15 @@ class FBPageAPI {
         return page
     }
     
+
     func fetchPage(_ query: String, success: @escaping (Page) -> Void) {
+        let timeUntil = round(NSDate().timeIntervalSince1970)
+        let day:TimeInterval = 60 * 60 * 24
+        let timeSince = timeUntil - day
         let session = URLSession.shared
-        let rawURLStr = "\(BASE_URL)/\(query)/posts?access_token=\(ACCESS_TOKEN)"
+        let rawURLStr = "\(BASE_URL)/\(query)/posts?access_token=\(ACCESS_TOKEN)&limit=100&since=\(timeSince)&until=\(timeUntil)"
         let escapedURL = rawURLStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = URL(string: escapedURL!)
-        NSLog("URL: \(BASE_URL)/\(query)/posts?limit=50?access_token=\(ACCESS_TOKEN)")
-        NSLog("URL: \(url)")
         let task = session.dataTask(with: url!) { data, response, err in
             if let error = err {
                 NSLog("FB API Error: \(error)")
