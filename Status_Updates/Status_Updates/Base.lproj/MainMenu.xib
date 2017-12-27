@@ -16,8 +16,8 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="YGR-iV-2qE" customClass="StatusMenuController" customModule="Status_Updates" customModuleProvider="target">
             <connections>
+                <outlet property="pagesItem" destination="4MN-1p-6jR" id="ETC-JB-2jE"/>
                 <outlet property="statusMenu" destination="Wjy-0a-9D3" id="4U3-vc-b3f"/>
-                <outlet property="weatherItem" destination="4MN-1p-6jR" id="bfZ-fN-dml"/>
             </connections>
         </customObject>
         <menu id="Wjy-0a-9D3">
@@ -29,7 +29,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="scS-4R-sh2"/>
-                <menuItem title="Weather" id="4MN-1p-6jR">
+                <menuItem title="Pages" id="4MN-1p-6jR" userLabel="PagesItem">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="5P6-Mx-tCF"/>

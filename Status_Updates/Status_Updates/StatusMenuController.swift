@@ -14,7 +14,7 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     let fbPageAPI = FBPageAPI()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
-    @IBOutlet weak var weatherItem: NSMenuItem!
+    @IBOutlet weak var pagesItem: NSMenuItem!
 //    @IBOutlet weak var pageItem: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     
@@ -31,17 +31,16 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
 
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
+<<<<<<< HEAD
         fbPageAPI.fetchPage("beaverconfessions") { page in
             NSLog(page.prettyPage)
         }
         let pageTableView = self.weatherItem.view as! PagesTableView
+=======
+        let pageTableView = self.pagesItem.view as! PagesTableView
+>>>>>>> 871801394bde5758856534227e9de1b9feaa28c3
         pageTableView.reloadData()
 
-//        weatherAPI.fetchWeather("Boston") { weather in
-//            let weatherView = self.weatherItem.view as! WeatherView
-//            weatherView.city.stringValue = weather.city
-//            weatherView.currentConditions.stringValue = weather.tempCondition
-//        }
 //        fbPageAPI.fetchPage("beaverconfessions") { page in
 //            let pageView = self.weatherItem.view as! PageView
 //            pageView.summary.stringValue = page.prettyPage
@@ -54,8 +53,8 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
         
         self.statusItem.image = icon
         self.statusItem.menu = statusMenu
-        
-        weatherItem.view = PagesTableView()
+
+        self.pagesItem.view = PageScroller(tableView: PagesTableView())
     }
     
 }

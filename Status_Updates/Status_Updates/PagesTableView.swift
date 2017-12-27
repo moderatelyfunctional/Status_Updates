@@ -10,25 +10,14 @@ import Cocoa
 
 class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     
-    let pageList = [PageData(name: "MIT Confessions",
-                             likes: 18940,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "Overheard At MIT",
-                             likes: 2242,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!)),
-                    PageData(name: "MIT Onion",
-                             likes: 18940,
-                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!))
-    ]
-    
     init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: 400))
+        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: Cons.PageView.height))
         
         let column = NSTableColumn()
         column.resizingMask = .autoresizingMask
         column.width = Cons.PageView.width
         
-        
+        self.headerView = nil
         self.addTableColumn(column)
         self.backgroundColor = NSColor.clear
         
@@ -41,11 +30,11 @@ class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.pageList.count
+        return PageList.sharedInstance.data.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        return PageView(page: self.pageList[row])
+        return PageView(page: PageList.sharedInstance.data[row])
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
