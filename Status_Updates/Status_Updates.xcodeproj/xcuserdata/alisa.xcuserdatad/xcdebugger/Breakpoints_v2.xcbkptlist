@@ -6,49 +6,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Status_Updates/FBPageAPI.swift"
-            timestampString = "535966065.75564"
+            timestampString = "535966504.97387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "fetchPage(_:success:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Status_Updates.FBPageAPI.fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()"
                   moduleName = "Status_Updates"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
-                  timestampString = "535966066.14864"
+                  timestampString = "535966505.583463"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "2222">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1939">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Status_Updates.FBPageAPI.(fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "Status_Updates"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
-                  timestampString = "535966066.151745"
+                  timestampString = "535966505.587296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "38">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Status_Updates/FBPageAPI.swift"
+            timestampString = "535966566.434937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchPage(_:success:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Status_Updates.FBPageAPI.(fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Status_Updates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
+                  timestampString = "535966650.522417"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Status_Updates.FBPageAPI.(fetchPage (Swift.String, success : (Status_Updates.Page) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Status_Updates"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Desktop/Status_Updates/Status_Updates/Status_Updates/FBPageAPI.swift"
+                  timestampString = "535966650.525369"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Status_Updates/FBPageAPI.swift"
+            timestampString = "535966586.162579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "pageFromJSON(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

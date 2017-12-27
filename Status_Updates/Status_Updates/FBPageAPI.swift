@@ -35,10 +35,10 @@ class FBPageAPI {
     
     func fetchPage(_ query: String, success: @escaping (Page) -> Void) {
         let session = URLSession.shared
-        let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let escapedToken = ACCESS_TOKEN.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let url = URL(string: "\(BASE_URL)/\(escapedQuery)/posts?access_token=\(escapedToken)")
-        NSLog("URL: \(BASE_URL)/\(escapedQuery)/posts?access_token=\(escapedToken)")
+        let rawURLStr = "\(BASE_URL)/\(query)/posts?access_token=\(ACCESS_TOKEN)"
+        let escapedURL = rawURLStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let url = URL(string: escapedURL!)
+        NSLog("URL: \(BASE_URL)/\(query)/posts?limit=50?access_token=\(ACCESS_TOKEN)")
         NSLog("URL: \(url)")
         let task = session.dataTask(with: url!) { data, response, err in
             if let error = err {
