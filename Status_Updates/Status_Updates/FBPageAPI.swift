@@ -13,11 +13,7 @@ class FBPageAPI {
     struct PageMeta {
         let name:String
         let likes:Int
-    }
-
-    struct PagePosts {
         let updated:NSDate
-        let nPosts:Int
     }
 
     let BASE_URL = KEYS.FB_BASE_URL
@@ -35,14 +31,18 @@ class FBPageAPI {
         
         let pageName = json["name"]
         let pageLikes = json["fan_count"]
-        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int)
         
+        let posts = json["posts"] as! JSON
+        let postList = posts["data"] as! [JSON]
+        let postUpdated = postList[0]["created_time"] as! TimeInterval
+        
+        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int, updated: NSDate(timeIntervalSince1970: postUpdated))
         return pageMeta
     }
     
     func fetchMeta(_ query: String, success: @escaping (PageMeta) -> Void) {
         let session = URLSession.shared
-        let rawURLStr = "\(BASE_URL)/\(query)?access_token=\(ACCESS_TOKEN)&fields=name,fan_count"
+        let rawURLStr = "\(BASE_URL)/\(query)?access_token=\(ACCESS_TOKEN)&fields=name,fan_count,posts&date_format=U"
         let escapedURL = rawURLStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = URL(string: escapedURL!)
         let task = session.dataTask(with: url!) { data, response, err in
@@ -65,7 +65,7 @@ class FBPageAPI {
         task.resume()
     }
 
-    func postsFromJSON(_ data: Data) -> PagePosts? {
+    func postsFromJSON(_ data: Data) -> Int? {
         let json:JSON
         
         do {
@@ -75,15 +75,11 @@ class FBPageAPI {
             return nil
         }
         
-        let postList = json["data"] as! [JSON]
-        // let postUpdated = postList[0]["created_time"] as! NSDate
-        let postUpdated = NSDate(timeIntervalSinceNow: TimeInterval(exactly: 11000.0)!)
-        let pagePosts = PagePosts(updated: postUpdated, nPosts: postList.count)
-        
-        return pagePosts
+        let posts = json["data"] as! [JSON]
+        return posts.count
     }
 
-    func fetchPosts(_ query: String, success: @escaping (PagePosts) -> Void) {
+    func fetchPosts(_ query: String, success: @escaping (Int) -> Void) {
         let timeUntil = round(NSDate().timeIntervalSince1970)
         let day:TimeInterval = 60 * 60 * 24
         let timeSince = timeUntil - day
@@ -114,7 +110,7 @@ class FBPageAPI {
     func fetchPage(_ query: String, success: @escaping (PageData) -> Void) {
         self.fetchMeta(query) { pageMeta in
             self.fetchPosts(query) { pagePosts in
-                let pageData = PageData(name: pageMeta.name, likes: pageMeta.likes, updated: pagePosts.updated, nPosts: pagePosts.nPosts)
+                let pageData = PageData(name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
                 success(pageData)
             }
         }
