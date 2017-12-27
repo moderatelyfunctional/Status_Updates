@@ -31,20 +31,8 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
 
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-<<<<<<< HEAD
-        fbPageAPI.fetchPage("beaverconfessions") { page in
-            NSLog(page.prettyPage)
-        }
-        let pageTableView = self.weatherItem.view as! PagesTableView
-=======
         let pageTableView = self.pagesItem.view as! PagesTableView
->>>>>>> 871801394bde5758856534227e9de1b9feaa28c3
         pageTableView.reloadData()
-
-//        fbPageAPI.fetchPage("beaverconfessions") { page in
-//            let pageView = self.weatherItem.view as! PageView
-//            pageView.summary.stringValue = page.prettyPage
-//        }
     }
     
     override func awakeFromNib() {
