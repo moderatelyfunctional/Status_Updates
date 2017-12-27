@@ -12,19 +12,5 @@ struct PageData {
     let name:String
     let likes:Int
     let updated:NSDate
+    let nPosts:Int
 }
-
-//class PageList: NSObject {
-
-//    static let sharedInstance:PageList
-//
-//    let PageList = [PageData(name: "MIT Confessions",
-//                             likes: 18940,
-//                             updated: NSDate(timeIntervalSinceNow: TimeInterval(exactly: 18.0)!))
-//    ]
-//    
-//    private override init() {
-//        self.sharedInstance = PageList()
-//    }
-    
-//}
