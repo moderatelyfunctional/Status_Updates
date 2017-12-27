@@ -31,6 +31,9 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
 
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
+        fbPageAPI.fetchPage("beaverconfessions") { page in
+            NSLog(page.prettyPage)
+        }
         let pageTableView = self.weatherItem.view as! PagesTableView
         pageTableView.reloadData()
 

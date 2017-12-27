@@ -19,10 +19,10 @@ class PageView: NSView {
     init(page: PageData) {
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: Cons.PageView.height))
         
-        self.summary.stringValue = page.name
+        self.name.stringValue = page.name
         self.layer?.backgroundColor = NSColor.clear.cgColor
         
-        self.addSubview(self.summary)
+        self.addSubview(self.name)
     }
     
     required init?(coder: NSCoder) {
