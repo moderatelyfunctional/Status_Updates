@@ -25,11 +25,12 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
         NSApp.activate(ignoringOtherApps: true)
+        self.preferencesWindow.window?.title = "Preferences"
         self.preferencesWindow.showWindow(nil)
     }
 
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "TheMITOnion"])
+        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "themitonion"])
         let pageScroller = self.pagesItem.view as! PageScroller
         let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()

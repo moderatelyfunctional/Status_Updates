@@ -10,6 +10,8 @@
 		486746811FF225AD00D6D98F /* FBPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486746801FF225AD00D6D98F /* FBPageAPI.swift */; };
 		486746831FF2290000D6D98F /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486746821FF2290000D6D98F /* Page.swift */; };
 		486746851FF22AA100D6D98F /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486746841FF22AA100D6D98F /* PageView.swift */; };
+		DC29BD361FF46031005EC7E1 /* PreferencesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29BD351FF46031005EC7E1 /* PreferencesTableView.swift */; };
+		DC29BD381FF466DF005EC7E1 /* PrefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29BD371FF466DF005EC7E1 /* PrefView.swift */; };
 		DC995B711FF1DFB000747053 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B701FF1DFB000747053 /* Weather.swift */; };
 		DC995B7B1FF22A6700747053 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B791FF22A6700747053 /* PreferencesWindow.swift */; };
 		DC995B7C1FF22A6700747053 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC995B7A1FF22A6700747053 /* PreferencesWindow.xib */; };
@@ -32,6 +34,8 @@
 		486746801FF225AD00D6D98F /* FBPageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPageAPI.swift; sourceTree = "<group>"; };
 		486746821FF2290000D6D98F /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		486746841FF22AA100D6D98F /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		DC29BD351FF46031005EC7E1 /* PreferencesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesTableView.swift; sourceTree = "<group>"; };
+		DC29BD371FF466DF005EC7E1 /* PrefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefView.swift; sourceTree = "<group>"; };
 		DC995B701FF1DFB000747053 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		DC995B791FF22A6700747053 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		DC995B7A1FF22A6700747053 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
@@ -117,7 +121,9 @@
 				DC995B891FF345F400747053 /* xibs */,
 				DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */,
 				DC9F5FDE1FF1B476006AADE0 /* StatusMenuController.swift */,
+				DC29BD351FF46031005EC7E1 /* PreferencesTableView.swift */,
 				DC995B791FF22A6700747053 /* PreferencesWindow.swift */,
+				DC29BD371FF466DF005EC7E1 /* PrefView.swift */,
 				DC995B8A1FF3460400747053 /* Pages */,
 				DC995B8B1FF34C4700747053 /* API */,
 				DC995B7D1FF232FA00747053 /* TextLabel.swift */,
@@ -219,6 +225,8 @@
 				486746851FF22AA100D6D98F /* PageView.swift in Sources */,
 				DC995B711FF1DFB000747053 /* Weather.swift in Sources */,
 				DC995B821FF2CBEE00747053 /* PagesTableView.swift in Sources */,
+				DC29BD361FF46031005EC7E1 /* PreferencesTableView.swift in Sources */,
+				DC29BD381FF466DF005EC7E1 /* PrefView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

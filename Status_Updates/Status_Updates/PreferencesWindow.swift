@@ -9,20 +9,26 @@
 import Cocoa
 
 class PreferencesWindow: NSWindowController {
-
-    override var windowNibName: String! {
-        return "PreferencesWindow"
-    }
     
-    @IBOutlet weak var cityTextField: NSTextField!
+    let preferencesTableView = PreferencesTableView()
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
+    init() {
+        super.init(window: NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600),
+                                    styleMask: .docModalWindow,
+                                    backing: .nonretained,
+                                    defer: false))
 
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
+        self.window?.title = "Preferences"
+        self.window?.styleMask = [.titled, .closable]
         self.window?.center()
-        self.window?.makeKeyAndOrderFront(self)
+
+        self.window?.contentView?.addSubview(self.preferencesTableView)
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
 }

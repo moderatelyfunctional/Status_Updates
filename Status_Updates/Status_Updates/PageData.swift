@@ -14,3 +14,5 @@ struct PageData {
     let updated:NSDate
     let nPosts:Int
 }
+
+let EmptyPageData = PageData(name: "", likes: 0, updated: NSDate(), nPosts: 0)

@@ -14,7 +14,7 @@ final class PageList {
     var data = [PageData]()
     
     private init() {
-        self.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "TheMITOnion"])
+        self.data = PageList.fetchData(pages: ["beaverconfessions", "timelybeaverconfessions", "overheardatmit", "TheMITOnion"])
     }
 
     static func fetchData(pages: [String]) -> [PageData] {

@@ -24,4 +24,22 @@ struct Cons {
         
         static let updatedY:CGFloat = Cons.PageView.postsY - Cons.PageView.nameHeight
     }
+    struct PrefWindow {
+        static let width:CGFloat = 400.0
+        static let height:CGFloat = 600
+    }
+    struct PrefTableView {
+        static let width:CGFloat = 360
+        static let height:CGFloat = 200
+        static let separator:CGFloat = 15
+        
+        static let offsetX:CGFloat = (Cons.PrefWindow.width - Cons.PrefTableView.width) / 2
+//        static let offsetY:CGFloat = Cons.PrefWindow.height - Cons.PrefTableView.height - Cons.PrefTableView.separator
+        static let offsetY:CGFloat = 80
+    }
+    struct PrefView {
+        static let nRows:Int = 10
+        static let width:CGFloat = 360
+        static let height:CGFloat = 20
+    }
 }
