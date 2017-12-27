@@ -11,13 +11,13 @@ import Cocoa
 class PagesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     
     init() {
-        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: 400))
+        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PageView.width, height: Cons.PageView.height))
         
         let column = NSTableColumn()
         column.resizingMask = .autoresizingMask
         column.width = Cons.PageView.width
         
-        
+        self.headerView = nil
         self.addTableColumn(column)
         self.backgroundColor = NSColor.clear
         

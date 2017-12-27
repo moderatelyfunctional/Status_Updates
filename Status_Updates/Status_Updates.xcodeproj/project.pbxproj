@@ -19,6 +19,7 @@
 		DC995B8D1FF34C5C00747053 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B8C1FF34C5C00747053 /* Cons.swift */; };
 		DC995B8F1FF35CD000747053 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B8E1FF35CD000747053 /* Extensions.swift */; };
 		DC995B911FF3604A00747053 /* PageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B901FF3604A00747053 /* PageList.swift */; };
+		DC995B931FF364CA00747053 /* PageScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B921FF364CA00747053 /* PageScroller.swift */; };
 		DC9F5FD21FF1B353006AADE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */; };
 		DC9F5FD41FF1B353006AADE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */; };
 		DC9F5FD71FF1B353006AADE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9F5FD51FF1B353006AADE0 /* MainMenu.xib */; };
@@ -40,6 +41,7 @@
 		DC995B8C1FF34C5C00747053 /* Cons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cons.swift; sourceTree = "<group>"; };
 		DC995B8E1FF35CD000747053 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DC995B901FF3604A00747053 /* PageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageList.swift; sourceTree = "<group>"; };
+		DC995B921FF364CA00747053 /* PageScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageScroller.swift; sourceTree = "<group>"; };
 		DC9F5FCE1FF1B353006AADE0 /* Status_Updates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Status_Updates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9F5FD11FF1B353006AADE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9F5FD31FF1B353006AADE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		DC995B8A1FF3460400747053 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				DC995B921FF364CA00747053 /* PageScroller.swift */,
 				DC995B901FF3604A00747053 /* PageList.swift */,
 				DC995B811FF2CBEE00747053 /* PagesTableView.swift */,
 				DC995B851FF2D01700747053 /* PageData.swift */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC995B931FF364CA00747053 /* PageScroller.swift in Sources */,
 				DC995B8D1FF34C5C00747053 /* Cons.swift in Sources */,
 				DC9F5FE11FF1C2D7006AADE0 /* WeatherAPI.swift in Sources */,
 				DC995B911FF3604A00747053 /* PageList.swift in Sources */,
