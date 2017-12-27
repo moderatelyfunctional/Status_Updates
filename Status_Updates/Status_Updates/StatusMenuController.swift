@@ -15,7 +15,6 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     @IBOutlet weak var pagesItem: NSMenuItem!
-//    @IBOutlet weak var pageItem: NSMenuItem!
     @IBOutlet weak var statusMenu: NSMenu!
     
     let preferencesWindow = PreferencesWindow()
@@ -29,9 +28,13 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
         self.preferencesWindow.showWindow(nil)
     }
 
-    
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        let pageTableView = self.pagesItem.view as! PagesTableView
+        for pageData in PageList.sharedInstance.data {
+            // call the API on each page and load the data back into PageList
+        }
+        
+        let pageScroller = self.pagesItem.view as! PageScroller
+        let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()
 
 //        fbPageAPI.fetchPage("beaverconfessions") { page in
