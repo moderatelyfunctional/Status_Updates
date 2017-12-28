@@ -22,7 +22,14 @@ class PreferencesWindow: NSWindowController {
         self.window?.styleMask = [.titled, .closable]
         self.window?.center()
 
-        self.window?.contentView?.addSubview(self.preferencesTableView)
+        let prefScroller = NSScrollView(frame: NSRect(x: Cons.PrefTableView.offsetX,
+                                                      y: Cons.PrefTableView.offsetY,
+                                                      width: Cons.PrefTableView.width,
+                                                      height: Cons.PrefTableView.height + 50))
+        prefScroller.hasVerticalScroller = true
+        prefScroller.documentView = self.preferencesTableView
+        
+        self.window?.contentView?.addSubview(prefScroller)
     }
     
     required init?(coder: NSCoder) {

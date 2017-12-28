@@ -20,17 +20,16 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         for _ in self.index..<Cons.PrefView.nRows {
             self.data.append(EmptyPageData)
         }
-        super.init(frame: NSRect(x: Cons.PrefTableView.offsetX,
-                                 y: Cons.PrefTableView.offsetY,
+        super.init(frame: NSRect(x: 0,
+                                 y: 0,
                                  width: Cons.PrefTableView.width,
                                  height: Cons.PrefTableView.height))
         
-        let column = NSTableColumn()
-        column.resizingMask = .autoresizingMask
-        column.width = Cons.PageView.width
+        let pageColumn = NSTableColumn(identifier: "Facebook Pages")
+        pageColumn.width = Cons.PrefView.width
         
-        self.headerView = nil
-        self.addTableColumn(column)
+        self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefTableView.width, height: Cons.PrefView.height))
+        self.addTableColumn(pageColumn)
         self.backgroundColor = NSColor.clear
         self.usesAlternatingRowBackgroundColors = true
         
@@ -41,6 +40,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.data.count
