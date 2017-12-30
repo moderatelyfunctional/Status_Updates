@@ -26,7 +26,9 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
                                  height: Cons.PrefTableView.height))
         
         let pageColumn = NSTableColumn(identifier: "Facebook Pages")
+        pageColumn.headerCell = NSTableHeaderCell(textCell: "Facebook Pages")
         pageColumn.width = Cons.PrefView.width
+        
         
         self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefTableView.width, height: Cons.PrefView.height))
         self.addTableColumn(pageColumn)

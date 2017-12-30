@@ -6,6 +6,7 @@
 //  Copyright © 2017 Jing Lin. All rights reserved.
 //
 
+import Cocoa
 import Foundation
 
 extension NSDate {
@@ -18,6 +19,16 @@ extension NSDate {
         let hours = difference / secondsInHour
         
         return Int(hours)
+    }
+    
+}
+
+extension String {
+    
+    func width(fontSize: CGFloat) -> CGFloat {
+        let font = NSFont(name: "Helvetica Neue", size: fontSize)
+        let size = self.size(withAttributes: [NSFontAttributeName: font!])
+        return ceil(size.width) + 5
     }
     
 }

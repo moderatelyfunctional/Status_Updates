@@ -42,4 +42,37 @@ struct Cons {
         static let width:CGFloat = 360
         static let height:CGFloat = 20
     }
+    struct PrefAccess {
+        static let offsetX:CGFloat = 20
+        static let offsetY:CGFloat = PrefWindow.height - 60
+        static let text:String = "FB_ACCESS_KEY :"
+        static let width:CGFloat = Cons.PrefAccess.text.width(fontSize: PrefAccess.fontSize)
+        static let height:CGFloat = 20
+        
+        static let fontSize:CGFloat = 12.0
+    }
+    struct PrefAccessInput {
+        static let offsetX:CGFloat = Cons.PrefAccess.offsetX + Cons.PrefAccess.width + 5
+        static let offsetY:CGFloat = Cons.PrefAccess.offsetY
+        static let placeholder:String = "Insert Facebook API Key"
+        static let width:CGFloat = Cons.PrefAccessInput.placeholder.width(fontSize: PrefAccessInput.fontSize) + 10
+        static let height:CGFloat = Cons.PrefAccess.height
+        
+        static let fontSize:CGFloat = 12.0
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
