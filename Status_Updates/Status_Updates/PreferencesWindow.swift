@@ -11,16 +11,11 @@ import Cocoa
 class PreferencesWindow: NSWindowController {
     
 //    let preferencesTableView = PreferencesTableView()
-    let fb_access = TextLabel(frame: NSRect(x: Cons.PrefAccess.offsetX,
-                                            y: Cons.PrefAccess.offsetY,
-                                            width: Cons.PrefAccess.width,
-                                            height: Cons.PrefAccess.height),
+    let fb_access = TextLabel(frame: Cons.PrefAccess.frame,
                               fontSize: Cons.PrefAccess.fontSize)
-    let fb_access_input = TextInput(frame: NSRect(x: Cons.PrefAccessInput.offsetX,
-                                                  y: Cons.PrefAccessInput.offsetY,
-                                                  width: Cons.PrefAccessInput.width,
-                                                  height: Cons.PrefAccessInput.height),
+    let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
                                     fontSize: Cons.PrefAccessInput.fontSize)
+    let fb_button = PrefButton(frame: Cons.PrefButton.frame)
     
     init() {
         super.init(window: NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600),
@@ -45,6 +40,7 @@ class PreferencesWindow: NSWindowController {
 //        self.window?.contentView?.addSubview(prefScroller)
         self.window?.contentView?.addSubview(self.fb_access)
         self.window?.contentView?.addSubview(self.fb_access_input)
+        self.window?.contentView?.addSubview(self.fb_button)
     }
     
     required init?(coder: NSCoder) {
