@@ -22,13 +22,22 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         }
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefScroller.height))
         
-        let pageColumn = NSTableColumn(identifier: "Facebook Pages")
-        pageColumn.headerCell = NSTableHeaderCell(textCell: "Facebook Pages")
-        pageColumn.width = Cons.PrefView.width
+        let pageLinkColumn = NSTableColumn(identifier: "Link")
+        pageLinkColumn.headerCell = NSTableHeaderCell(textCell: "Page Link")
+        pageLinkColumn.width = Cons.PrefScroller.width * 0.3
+        
+        let pageTitleColumn = NSTableColumn(identifier: "Title")
+        pageTitleColumn.headerCell = NSTableHeaderCell(textCell: "Title")
+        pageTitleColumn.width = Cons.PrefScroller.width * 0.5
+        
+        let pageStatusColumn = NSTableColumn(identifier: "Status")
+        pageStatusColumn.headerCell = NSTableHeaderCell(textCell: "Status")
+        pageStatusColumn.width = Cons.PrefScroller.width * 0.2
         
         self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefView.height))
-        self.addTableColumn(pageColumn)
-        self.backgroundColor = NSColor.green
+        self.addTableColumn(pageLinkColumn)
+        self.addTableColumn(pageTitleColumn)
+        self.addTableColumn(pageStatusColumn)
         self.usesAlternatingRowBackgroundColors = true
         
         self.delegate = self
@@ -52,3 +61,8 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     }
     
 }
+
+
+
+
+

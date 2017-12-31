@@ -82,6 +82,14 @@ struct Cons {
         
         static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: height)
     }
+    struct PrefControl {
+        static let offsetX:CGFloat = 40.0
+        static let offsetY:CGFloat = PrefScroller.offsetY - height
+        static let width:CGFloat = 96
+        static let height:CGFloat = 35
+        
+        static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: height)
+    }
 }
 
 

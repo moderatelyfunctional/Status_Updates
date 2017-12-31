@@ -18,6 +18,7 @@ class PreferencesWindow: NSWindowController {
     let first_separator = NSBox(frame: Cons.PrefSeparators.first)
     
     let fb_pages = PrefScroller(frame: Cons.PrefScroller.frame)
+    let fb_pages_control = PrefControl(frame: Cons.PrefControl.frame)
     
     init() {
         super.init(window: NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600),
@@ -36,7 +37,9 @@ class PreferencesWindow: NSWindowController {
         self.window?.contentView?.addSubview(self.fb_access_input)
         self.window?.contentView?.addSubview(self.fb_button)
         self.window?.contentView?.addSubview(self.first_separator)
+        
         self.window?.contentView?.addSubview(self.fb_pages)
+        self.window?.contentView?.addSubview(self.fb_pages_control)
     }
     
     required init?(coder: NSCoder) {
