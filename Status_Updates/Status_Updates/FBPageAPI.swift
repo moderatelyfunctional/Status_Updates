@@ -119,6 +119,47 @@ class FBPageAPI {
             }
         }
     }
+    
+    func statusFromJSON(_ data: Data) -> PageStatus? {
+        let json:JSON
+        
+        do {
+            json = try JSONSerialization.jsonObject(with: data, options: []) as! JSON
+        } catch {
+            NSLog("JSON parsing failed: \(error)")
+            return nil
+        }
+        
+        return PageStatus(name: json["name"] as! String, status: 0)
+    }
+    
+    func fetchStatus(_ query: String, success: @escaping (PageStatus) -> Void) {
+        let session = URLSession.shared
+        let rawURLStr = "\(BASE_URL)/\(query)?access_token=\(ACCESS_TOKEN)&fields=name"
+        let escapedURL = rawURLStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let url = URL(string: escapedURL!)
+        let task = session.dataTask(with: url!) { data, response, err in
+            if let error = err {
+                NSLog("FB API Error: \(error)")
+                success(PageStatus(name: "", status: -1))
+            }
+            if let httpResponse = response as? HTTPURLResponse {
+                switch httpResponse.statusCode {
+                case 200:
+                    if let pageStatus = self.statusFromJSON(data!) {
+                        success(pageStatus)
+                    }
+                case 401:
+                    NSLog("FB API Unauthorized Error")
+                    success(PageStatus(name: "", status: -1))
+                default:
+                    NSLog("FB API returned response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    success(PageStatus(name: "", status: -1))
+                }
+            }
+        }
+        task.resume()
+    }
 }
 
 
