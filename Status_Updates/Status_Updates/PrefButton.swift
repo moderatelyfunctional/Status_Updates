@@ -10,11 +10,10 @@ import Cocoa
 
 class PrefButton: NSButton {
 
-    override init(frame frameRect: NSRect) {
+    init(frame frameRect: NSRect, title: String) {
         super.init(frame: frameRect)
         
-        self.title = "Set"
-//        self.font = NSFont(name: "Helvetica Neue", size: 16.0)
+        self.title = title
         self.setButtonType(.momentaryPushIn)
         self.bezelStyle = .texturedSquare
     }

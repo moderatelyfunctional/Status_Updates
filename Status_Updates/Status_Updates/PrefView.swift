@@ -8,16 +8,16 @@
 
 import Cocoa
 
-class PrefView: NSView {
+class PrefView: NSTextField {
     
-    let name = TextLabel(frame: NSRect(x: 0, y: 0, width: Cons.PrefView.width, height: Cons.PrefView.height))
-    
-    init(page: PageData) {
-        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefView.width, height: Cons.PrefView.height))
+    init(frame: CGRect, fontSize: CGFloat, text: String) {
+        super.init(frame: frame)
         
-        self.name.stringValue = page.name
+        self.isEditable = true
+        self.drawsBackground = false
+        self.stringValue = text
         
-        self.addSubview(self.name)
+        self.isBordered = false
     }
     
     required init?(coder: NSCoder) {

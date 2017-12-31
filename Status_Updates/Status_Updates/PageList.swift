@@ -18,14 +18,17 @@ final class PageList {
     }
 
     static func fetchData(pages: [String]) -> [PageData] {
+        if (FBPageAPI.sharedInstance.ACCESS_TOKEN.isEmpty) {
+            return []
+        }
+        
         var pageDataList = [PageData]()
-        let fbPageAPI = FBPageAPI()
         let group = DispatchGroup()
         
         for page in pages {
             group.enter()
             DispatchQueue.global().async {
-                fbPageAPI.fetchPage(page) { pageData in
+                FBPageAPI.sharedInstance.fetchPage(page) { pageData in
                     pageDataList.append(pageData)
                     group.leave()
                 }

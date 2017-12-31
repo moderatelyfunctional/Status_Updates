@@ -26,7 +26,9 @@ struct Cons {
     }
     struct PrefWindow {
         static let width:CGFloat = 400.0
-        static let height:CGFloat = 600
+        static let height:CGFloat = 550
+        
+        static let frame:NSRect = NSRect(x: 0, y: 0, width: width, height: height)
     }
     struct PrefAccess {
         static let text:String = "FB_ACCESS_KEY :"
@@ -56,7 +58,8 @@ struct Cons {
         static let width:CGFloat = Cons.PrefWindow.width - Cons.PrefButton.offsetX - 20
         static let height:CGFloat = Cons.PrefAccess.height
         
-        static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: Cons.PrefAccess.height + 5)
+        static let set_frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: Cons.PrefAccess.height + 5)
+        static let done_frame:NSRect = NSRect(x: offsetX, y: PrefControl.offsetY - 20, width: width, height: Cons.PrefAccess.height + 5)
     }
     struct PrefSeparators {
         static let first:NSRect = NSRect(x: PrefAccess.offsetX, y: PrefAccess.offsetY - 30, width: PrefWindow.width - 2 * PrefAccess.offsetX, height: 1.0)
@@ -73,10 +76,12 @@ struct Cons {
         static let nRows:Int = 15
         static let width:CGFloat = 360
         static let height:CGFloat = 20
+        
+        static let frame:NSRect = NSRect(x: 0, y: 0, width: width, height: height)
     }
     struct PrefScroller {
         static let offsetX:CGFloat = 40.0
-        static let offsetY:CGFloat = PrefSeparators.first.origin.y - 40.0 - height
+        static let offsetY:CGFloat = PrefSeparators.first.origin.y - 32 - height
         static let width:CGFloat = PrefWindow.width - 2 * offsetX
         static let height:CGFloat = 300
         

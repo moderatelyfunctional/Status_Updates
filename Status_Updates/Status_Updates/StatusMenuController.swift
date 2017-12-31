@@ -10,8 +10,6 @@ import Cocoa
 
 class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 
-//    let weatherAPI = WeatherAPI()
-    let fbPageAPI = FBPageAPI()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     @IBOutlet weak var pagesItem: NSMenuItem!
@@ -30,7 +28,8 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     }
 
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "themitonion"])
+//        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions", "overheardatmit", "themitonion"])
+        PageList.sharedInstance.data = PageList.fetchData(pages: ["beaverconfessions"])
         let pageScroller = self.pagesItem.view as! PageScroller
         let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()

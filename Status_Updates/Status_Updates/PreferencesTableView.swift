@@ -32,7 +32,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         
         let pageStatusColumn = NSTableColumn(identifier: "Status")
         pageStatusColumn.headerCell = NSTableHeaderCell(textCell: "Status")
-        pageStatusColumn.width = Cons.PrefScroller.width * 0.2
+        pageStatusColumn.width = Cons.PrefScroller.width * 0.20
         
         self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefView.height))
         self.addTableColumn(pageLinkColumn)
@@ -53,7 +53,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        return PrefView(page: self.data[row])
+        return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: self.data[row].name)
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {

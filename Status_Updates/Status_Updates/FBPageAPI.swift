@@ -16,8 +16,12 @@ class FBPageAPI {
         let updated:NSDate
     }
 
-    let BASE_URL = KEYS.FB_BASE_URL
-    let ACCESS_TOKEN = KEYS.FB_ACCESS_TOKEN
+    let BASE_URL = "https://graph.facebook.com/v2.9"
+    var ACCESS_TOKEN = ""
+    
+    static let sharedInstance:FBPageAPI = FBPageAPI()
+    
+    private init() { }
     
     func metaFromJSON(_ data: Data) -> PageMeta? {
         let json:JSON
@@ -116,3 +120,6 @@ class FBPageAPI {
         }
     }
 }
+
+
+
