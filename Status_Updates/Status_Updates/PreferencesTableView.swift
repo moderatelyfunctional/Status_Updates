@@ -12,27 +12,23 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     var data:[PageData] = []
     var index:Int = 0
     
-    init() {
-        self.index = PageList.sharedInstance.data.count
-        for element in PageList.sharedInstance.data {
+    init(currentData: [PageData]) {
+        self.index = currentData.count
+        for element in currentData {
             self.data.append(element)
         }
         for _ in self.index..<Cons.PrefView.nRows {
             self.data.append(EmptyPageData)
         }
-        super.init(frame: NSRect(x: 0,
-                                 y: 0,
-                                 width: Cons.PrefTableView.width,
-                                 height: Cons.PrefTableView.height))
+        super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefScroller.height))
         
         let pageColumn = NSTableColumn(identifier: "Facebook Pages")
         pageColumn.headerCell = NSTableHeaderCell(textCell: "Facebook Pages")
         pageColumn.width = Cons.PrefView.width
         
-        
-        self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefTableView.width, height: Cons.PrefView.height))
+        self.headerView = NSTableHeaderView(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefView.height))
         self.addTableColumn(pageColumn)
-        self.backgroundColor = NSColor.clear
+        self.backgroundColor = NSColor.green
         self.usesAlternatingRowBackgroundColors = true
         
         self.delegate = self
@@ -42,7 +38,6 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.data.count

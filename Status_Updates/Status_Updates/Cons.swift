@@ -28,19 +28,6 @@ struct Cons {
         static let width:CGFloat = 400.0
         static let height:CGFloat = 600
     }
-    struct PrefTableView {
-        static let width:CGFloat = 360
-        static let height:CGFloat = 200
-        static let separator:CGFloat = 15
-        
-        static let offsetX:CGFloat = (Cons.PrefWindow.width - width) / 2
-        static let offsetY:CGFloat = 80
-    }
-    struct PrefView {
-        static let nRows:Int = 10
-        static let width:CGFloat = 360
-        static let height:CGFloat = 20
-    }
     struct PrefAccess {
         static let text:String = "FB_ACCESS_KEY :"
         static let fontSize:CGFloat = 12.0
@@ -65,9 +52,33 @@ struct Cons {
     }
     struct PrefButton {
         static let offsetX:CGFloat = Cons.PrefAccessInput.offsetX + Cons.PrefAccessInput.width + 10
-        static let offsetY:CGFloat = Cons.PrefAccess.offsetY
+        static let offsetY:CGFloat = Cons.PrefAccess.offsetY - 3
         static let width:CGFloat = Cons.PrefWindow.width - Cons.PrefButton.offsetX - 20
         static let height:CGFloat = Cons.PrefAccess.height
+        
+        static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: Cons.PrefAccess.height + 5)
+    }
+    struct PrefSeparators {
+        static let first:NSRect = NSRect(x: PrefAccess.offsetX, y: PrefAccess.offsetY - 30, width: PrefWindow.width - 2 * PrefAccess.offsetX, height: 1.0)
+    }
+    struct PrefTableView {
+        static let width:CGFloat = 360
+        static let height:CGFloat = 200
+        static let separator:CGFloat = 15
+        
+        static let offsetX:CGFloat = (Cons.PrefWindow.width - width) / 2
+        static let offsetY:CGFloat = 80
+    }
+    struct PrefView {
+        static let nRows:Int = 15
+        static let width:CGFloat = 360
+        static let height:CGFloat = 20
+    }
+    struct PrefScroller {
+        static let offsetX:CGFloat = 40.0
+        static let offsetY:CGFloat = PrefSeparators.first.origin.y - 40.0 - height
+        static let width:CGFloat = PrefWindow.width - 2 * offsetX
+        static let height:CGFloat = 300
         
         static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: height)
     }

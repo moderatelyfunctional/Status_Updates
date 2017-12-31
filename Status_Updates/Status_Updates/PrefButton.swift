@@ -13,13 +13,10 @@ class PrefButton: NSButton {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-//        let cell = NSButtonCell(textCell: "Set")
-        self.cell = cell
-        
         self.title = "Set"
-//        self.bezelStyle = .roundbe
+//        self.font = NSFont(name: "Helvetica Neue", size: 16.0)
         self.setButtonType(.momentaryPushIn)
-        self.bezelStyle = .rounded
+        self.bezelStyle = .texturedSquare
     }
     
     required init?(coder: NSCoder) {

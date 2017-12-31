@@ -10,12 +10,14 @@ import Cocoa
 
 class PreferencesWindow: NSWindowController {
     
-//    let preferencesTableView = PreferencesTableView()
     let fb_access = TextLabel(frame: Cons.PrefAccess.frame,
                               fontSize: Cons.PrefAccess.fontSize)
     let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
                                     fontSize: Cons.PrefAccessInput.fontSize)
     let fb_button = PrefButton(frame: Cons.PrefButton.frame)
+    let first_separator = NSBox(frame: Cons.PrefSeparators.first)
+    
+    let fb_pages = PrefScroller(frame: Cons.PrefScroller.frame)
     
     init() {
         super.init(window: NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600),
@@ -24,23 +26,17 @@ class PreferencesWindow: NSWindowController {
                                     defer: false))
         
         self.fb_access.stringValue = Cons.PrefAccess.text
+        self.first_separator.boxType = .primary
         
         self.window?.title = "Preferences"
         self.window?.styleMask = [.titled, .closable]
         self.window?.center()
-
-//        let prefScroller = NSScrollView(frame: NSRect(x: Cons.PrefTableView.offsetX,
-//                                                      y: Cons.PrefTableView.offsetY,
-//                                                      width: Cons.PrefTableView.width,
-//                                                      height: Cons.PrefTableView.height))
-//        prefScroller.hasVerticalScroller = true
-//        prefScroller.documentView = self.preferencesTableView
-//        prefScroller.backgroundColor = NSColor.white
-//        prefScroller.drawsBackground = true
-//        self.window?.contentView?.addSubview(prefScroller)
+        
         self.window?.contentView?.addSubview(self.fb_access)
         self.window?.contentView?.addSubview(self.fb_access_input)
         self.window?.contentView?.addSubview(self.fb_button)
+        self.window?.contentView?.addSubview(self.first_separator)
+        self.window?.contentView?.addSubview(self.fb_pages)
     }
     
     required init?(coder: NSCoder) {

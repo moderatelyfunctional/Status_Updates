@@ -10,10 +10,7 @@ import Cocoa
 
 class PrefView: NSView {
     
-    let name = TextLabel(frame: NSRect(x: 0,
-                                       y: 0,
-                                       width: Cons.PrefView.width,
-                                       height: Cons.PrefView.height))
+    let name = TextLabel(frame: NSRect(x: 0, y: 0, width: Cons.PrefView.width, height: Cons.PrefView.height))
     
     init(page: PageData) {
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefView.width, height: Cons.PrefView.height))
