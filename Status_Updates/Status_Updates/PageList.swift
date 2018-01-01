@@ -12,12 +12,16 @@ final class PageList {
     
     static let sharedInstance = PageList()
     var data = [PageData]()
+    var pageids = [String]()
     
     private init() {
-//        self.data = PageList.fetchData(pages: ["beaverconfessions", "timelybeaverconfessions", "overheardatmit", "TheMITOnion"])
+        if let pageList = UserDefaults.standard.object(forKey: "FB_PAGE_LIST") {
+            self.pageids = pageList as! [String]
+//            self.data = PageList.fetchData()
+        }
     }
 
-    static func fetchData(pages: [String]) -> [PageData] {
+    static func fetchData() -> [PageData] {
         if (FBPageAPI.sharedInstance.ACCESS_TOKEN.isEmpty) {
             return []
         }
@@ -25,7 +29,7 @@ final class PageList {
         var pageDataList = [PageData]()
         let group = DispatchGroup()
         
-        for page in pages {
+        for page in PageList.sharedInstance.pageids {
             group.enter()
             DispatchQueue.global().async {
                 FBPageAPI.sharedInstance.fetchPage(page) { pageData in

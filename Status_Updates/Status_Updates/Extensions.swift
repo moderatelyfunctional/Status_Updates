@@ -32,3 +32,28 @@ extension String {
     }
     
 }
+
+extension Int {
+    
+//    https://stackoverflow.com/questions/37335286/given-a-number-n-find-how-many-digits-in-that-number-are-useful-a-digit-in-the
+    public var numDigits: Int {
+        get {
+            return numberOfDigits(in: self)
+        }
+    }
+    
+    private func countDigits() -> Int {
+        var num = abs(self)
+        var count = 0
+        while num > 0 {
+            let digit = num % 10
+            if digit != 0 && self % digit == 0 {
+                count += 1
+            }
+            num = num / 10
+        }
+        return count
+    }
+
+    
+}

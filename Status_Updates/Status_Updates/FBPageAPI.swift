@@ -22,9 +22,9 @@ class FBPageAPI {
     static let sharedInstance:FBPageAPI = FBPageAPI()
     
     private init() {
-        let preferences = UserDefaults.standard
-        
-    
+        if let token = UserDefaults.standard.object(forKey: "FB_ACCESS_TOKEN") {
+            self.ACCESS_TOKEN = token as! String
+        }
     }
     
     func metaFromJSON(_ data: Data) -> PageMeta? {

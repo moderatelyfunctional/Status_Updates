@@ -10,12 +10,14 @@ import Cocoa
 
 class PrefScroller: NSScrollView {
     
+    let prefTableView = PreferencesTableView(currentData: PageList.sharedInstance.data)
+    
     override init(frame: NSRect) {
         super.init(frame: frame)
         
         self.drawsBackground = false
         self.hasVerticalScroller = false
-        self.documentView = PreferencesTableView(currentData: PageList.sharedInstance.data)
+        self.documentView = prefTableView
     }
     
     required init?(coder: NSCoder) {

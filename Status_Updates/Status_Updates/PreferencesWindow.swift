@@ -13,7 +13,7 @@ class PreferencesWindow: NSWindowController {
     let fb_access = TextLabel(frame: Cons.PrefAccess.frame,
                               fontSize: Cons.PrefAccess.fontSize)
     let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
-                                    fontSize: Cons.PrefAccessInput.fontSize)
+                                    setPlaceholder: true)
     let fb_button = PrefButton(frame: Cons.PrefButton.set_frame, title: "Set")
     let first_separator = NSBox(frame: Cons.PrefSeparators.first)
     
@@ -53,9 +53,23 @@ class PreferencesWindow: NSWindowController {
     
     func add_api_key() {
         FBPageAPI.sharedInstance.ACCESS_TOKEN = self.fb_access_input.stringValue
+        UserDefaults.standard.set(self.fb_access_input.stringValue, forKey: "FB_ACCESS_TOKEN")
     }
     
     func exit() {
+        let prefTable = self.fb_pages.prefTableView
+        var pageList:[String] = []
+        var pageDataList:[PageData] = []
+        
+        for (index, pageStatus) in prefTable.status.enumerated() {
+            if (pageStatus == "200") {
+                pageList.append(prefTable.data[index].id)
+                pageDataList.append(prefTable.data[index])
+            }
+        }
+        PageList.sharedInstance.data = pageDataList
+        UserDefaults.standard.set(pageList, forKey: "FB_PAGE_LIST")
+        
         self.close()
     }
     
