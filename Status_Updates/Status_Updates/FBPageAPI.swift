@@ -114,7 +114,7 @@ class FBPageAPI {
     func fetchPage(_ query: String, success: @escaping (PageData) -> Void) {
         self.fetchMeta(query) { pageMeta in
             self.fetchPosts(query) { pagePosts in
-                let pageData = PageData(name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
+                let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
                 success(pageData)
             }
         }

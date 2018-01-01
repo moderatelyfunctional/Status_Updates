@@ -8,19 +8,27 @@
 
 import Cocoa
 
-class PrefView: NSTextField {
+class PrefView: NSTextField, NSTextFieldDelegate {
     
-    init(frame: CGRect, fontSize: CGFloat, text: String) {
+    let row:Int
+    
+    init(frame: CGRect, fontSize: CGFloat, text: String, row:Int, editable: Bool) {
+        self.row = row
         super.init(frame: frame)
         
-        self.isEditable = true
+        self.isEditable = editable
         self.drawsBackground = false
+        self.isBordered = false
         self.stringValue = text
         
-        self.isBordered = false
+        self.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func controlTextDidEndEditing(_ obj: Notification) {
+        
     }
 }

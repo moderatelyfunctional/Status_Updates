@@ -10,15 +10,18 @@ import Cocoa
 class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSource {
     
     var data:[PageData] = []
+    var status:[String] = []
     var index:Int = 0
     
     init(currentData: [PageData]) {
         self.index = currentData.count
         for element in currentData {
             self.data.append(element)
+            self.status.append("200")
         }
         for _ in self.index..<Cons.PrefView.nRows {
             self.data.append(EmptyPageData)
+            self.status.append("200")
         }
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefScroller.height))
         
@@ -53,7 +56,18 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: self.data[row].name)
+        let editable = tableColumn?.identifier == "Link" ? true : false
+        if (row >= self.index) {
+            return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: "", row: row, editable: editable)
+        }
+        var text = self.status[row]
+        if (tableColumn?.identifier == "Link") {
+            text = self.data[row].id
+        } else if (tableColumn?.identifier == "Title") {
+            text = self.data[row].name
+        }
+        
+        return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: text, row: row, editable: editable)
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -61,6 +75,13 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     }
     
 }
+
+
+
+
+
+
+
 
 
 

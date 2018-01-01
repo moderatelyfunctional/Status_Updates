@@ -14,7 +14,7 @@ class PrefScroller: NSScrollView {
         super.init(frame: frame)
         
         self.drawsBackground = false
-        self.hasVerticalScroller = true
+        self.hasVerticalScroller = false
         self.documentView = PreferencesTableView(currentData: PageList.sharedInstance.data)
     }
     

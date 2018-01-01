@@ -73,7 +73,7 @@ struct Cons {
         static let offsetY:CGFloat = 80
     }
     struct PrefView {
-        static let nRows:Int = 15
+        static let nRows:Int = 1
         static let width:CGFloat = 360
         static let height:CGFloat = 20
         
