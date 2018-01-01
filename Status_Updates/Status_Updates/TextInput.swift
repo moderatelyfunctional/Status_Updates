@@ -14,6 +14,7 @@ class TextInput: NSTextField {
         super.init(frame: frame)
         
         self.isEditable = true
+        self.lineBreakMode = .byTruncatingTail
         self.placeholderString = Cons.PrefAccessInput.placeholder
     }
     

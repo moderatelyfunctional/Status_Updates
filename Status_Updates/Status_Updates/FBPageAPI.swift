@@ -21,7 +21,11 @@ class FBPageAPI {
     
     static let sharedInstance:FBPageAPI = FBPageAPI()
     
-    private init() { }
+    private init() {
+        let preferences = UserDefaults.standard
+        
+    
+    }
     
     func metaFromJSON(_ data: Data) -> PageMeta? {
         let json:JSON

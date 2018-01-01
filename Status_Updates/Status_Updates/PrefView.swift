@@ -23,6 +23,8 @@ class PrefView: NSTextField, NSTextFieldDelegate {
         self.isBordered = false
         self.stringValue = text
         
+        self.lineBreakMode = .byTruncatingTail
+        
         self.delegate = self
     }
     
