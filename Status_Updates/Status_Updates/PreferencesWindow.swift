@@ -13,7 +13,7 @@ class PreferencesWindow: NSWindowController {
     let fb_access = TextLabel(frame: Cons.PrefAccess.frame,
                               fontSize: Cons.PrefAccess.fontSize)
     let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
-                                    fontSize: Cons.PrefAccessInput.fontSize)
+                                    setPlaceholder: true)
     let fb_button = PrefButton(frame: Cons.PrefButton.set_frame, title: "Set")
     let first_separator = NSBox(frame: Cons.PrefSeparators.first)
     

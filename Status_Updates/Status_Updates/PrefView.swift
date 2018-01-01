@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PrefView: NSTextField, NSTextFieldDelegate {
+class PrefView: TextInput, NSTextFieldDelegate {
     
     let row:Int
     let prefDelegate:PrefFBPageDelegate
@@ -16,7 +16,7 @@ class PrefView: NSTextField, NSTextFieldDelegate {
     init(frame: CGRect, text: String, row:Int, editable: Bool, delegate:PrefFBPageDelegate) {
         self.row = row
         self.prefDelegate = delegate
-        super.init(frame: frame)
+        super.init(frame: frame, setPlaceholder: false)
         
         self.isEditable = editable
         self.drawsBackground = false
