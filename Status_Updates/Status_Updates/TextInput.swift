@@ -26,6 +26,7 @@ class TextInput: NSTextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // https://stackoverflow.com/questions/970707/cocoa-keyboard-shortcuts-in-dialog-without-an-edit-menu
     override func performKeyEquivalent(with event: NSEvent) -> Bool {
         if event.type == NSEventType.keyDown {
             if (event.modifierFlags.rawValue & NSEventModifierFlags.deviceIndependentFlagsMask.rawValue) == commandKey {
