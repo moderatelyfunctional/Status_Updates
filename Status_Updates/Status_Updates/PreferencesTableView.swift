@@ -19,9 +19,9 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
             self.data.append(element)
             self.status.append("200")
         }
-        for _ in self.index..<Cons.PrefView.nRows {
+        for _ in 0..<Cons.PrefView.nRows {
             self.data.append(EmptyPageData)
-            self.status.append("200")
+            self.status.append("")
         }
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefScroller.height))
         
@@ -58,7 +58,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let editable = tableColumn?.identifier == "Link" ? true : false
         if (row >= self.index) {
-            return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: "", row: row, editable: editable)
+            return PrefView(frame: Cons.PrefView.frame, text: "", row: row, editable: editable, delegate: self)
         }
         var text = self.status[row]
         if (tableColumn?.identifier == "Link") {
@@ -67,7 +67,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
             text = self.data[row].name
         }
         
-        return PrefView(frame: Cons.PrefView.frame, fontSize: 12, text: text, row: row, editable: editable)
+        return PrefView(frame: Cons.PrefView.frame, text: text, row: row, editable: editable, delegate: self)
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -76,7 +76,22 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     
 }
 
-
+extension PreferencesTableView: PrefFBPageDelegate {
+    
+    func insertFBID(row: Int, id: String) {
+//        FBPageAPI.sharedInstance.fetchStatus(id) { pageStatus in
+        let pageStatus = PageStatus(name: "HELLO", status: 401)
+            self.status[row] = "\(pageStatus.status)"
+            self.data[row].id = id
+            self.data[row].name = pageStatus.name
+            self.data.append(EmptyPageData)
+            self.status.append("")
+        
+//        }
+        self.reloadData()
+    }
+    
+}
 
 
 

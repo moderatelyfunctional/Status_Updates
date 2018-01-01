@@ -11,9 +11,11 @@ import Cocoa
 class PrefView: NSTextField, NSTextFieldDelegate {
     
     let row:Int
+    let prefDelegate:PrefFBPageDelegate
     
-    init(frame: CGRect, fontSize: CGFloat, text: String, row:Int, editable: Bool) {
+    init(frame: CGRect, text: String, row:Int, editable: Bool, delegate:PrefFBPageDelegate) {
         self.row = row
+        self.prefDelegate = delegate
         super.init(frame: frame)
         
         self.isEditable = editable
@@ -29,6 +31,9 @@ class PrefView: NSTextField, NSTextFieldDelegate {
     }
     
     override func controlTextDidEndEditing(_ obj: Notification) {
-        
+        if (self.stringValue == "") {
+            return
+        }
+        self.prefDelegate.insertRow(row: self.row, id: self.stringValue)
     }
 }

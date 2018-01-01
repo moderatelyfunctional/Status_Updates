@@ -9,11 +9,11 @@
 import Cocoa
 
 struct PageData {
-    let id:String
-    let name:String
-    let likes:Int
-    let updated:NSDate
-    let nPosts:Int
+    var id:String
+    var name:String
+    var likes:Int
+    var updated:NSDate
+    var nPosts:Int
 }
 
 let EmptyPageData = PageData(id: "", name: "", likes: 0, updated: NSDate(), nPosts: 0)

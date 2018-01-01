@@ -33,6 +33,7 @@
 		DC9F5FE11FF1C2D7006AADE0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FE01FF1C2D7006AADE0 /* WeatherAPI.swift */; };
 		DC9F5FE31FF1C346006AADE0 /* KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F5FE21FF1C346006AADE0 /* KEYS.swift */; };
 		DCE8F38B1FF97B61001B11B5 /* PageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8F38A1FF97B61001B11B5 /* PageStatus.swift */; };
+		DCE8F38D1FF9ED0C001B11B5 /* PrefReloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8F38C1FF9ED0C001B11B5 /* PrefReloadDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DC9F5FE01FF1C2D7006AADE0 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		DC9F5FE21FF1C346006AADE0 /* KEYS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEYS.swift; sourceTree = "<group>"; };
 		DCE8F38A1FF97B61001B11B5 /* PageStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStatus.swift; sourceTree = "<group>"; };
+		DCE8F38C1FF9ED0C001B11B5 /* PrefReloadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefReloadDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				DC29BD351FF46031005EC7E1 /* PreferencesTableView.swift */,
 				DC995B791FF22A6700747053 /* PreferencesWindow.swift */,
 				DC4008631FF862B500EC480E /* PrefScroller.swift */,
+				DCE8F38C1FF9ED0C001B11B5 /* PrefReloadDelegate.swift */,
 				DC4008591FF717CD00EC480E /* PrefData.swift */,
 				DC29BD371FF466DF005EC7E1 /* PrefView.swift */,
 				DC4008651FF86C1100EC480E /* PrefControl.swift */,
@@ -228,6 +231,7 @@
 				DC4008641FF862B500EC480E /* PrefScroller.swift in Sources */,
 				DC9F5FE11FF1C2D7006AADE0 /* WeatherAPI.swift in Sources */,
 				DC4008601FF80C2200EC480E /* TextInput.swift in Sources */,
+				DCE8F38D1FF9ED0C001B11B5 /* PrefReloadDelegate.swift in Sources */,
 				DC995B911FF3604A00747053 /* PageList.swift in Sources */,
 				486746811FF225AD00D6D98F /* FBPageAPI.swift in Sources */,
 				DC9F5FE31FF1C346006AADE0 /* KEYS.swift in Sources */,

@@ -130,7 +130,7 @@ class FBPageAPI {
             return nil
         }
         
-        return PageStatus(name: json["name"] as! String, status: 0)
+        return PageStatus(name: json["name"] as! String, status: 200)
     }
     
     func fetchStatus(_ query: String, success: @escaping (PageStatus) -> Void) {
@@ -141,7 +141,7 @@ class FBPageAPI {
         let task = session.dataTask(with: url!) { data, response, err in
             if let error = err {
                 NSLog("FB API Error: \(error)")
-                success(PageStatus(name: "", status: -1))
+                success(PageStatus(name: "", status: 0))
             }
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
@@ -151,10 +151,10 @@ class FBPageAPI {
                     }
                 case 401:
                     NSLog("FB API Unauthorized Error")
-                    success(PageStatus(name: "", status: -1))
+                    success(PageStatus(name: "", status: 401))
                 default:
                     NSLog("FB API returned response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                    success(PageStatus(name: "", status: -1))
+                    success(PageStatus(name: "", status: httpResponse.statusCode))
                 }
             }
         }
