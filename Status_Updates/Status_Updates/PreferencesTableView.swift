@@ -11,10 +11,8 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     
     var data:[PageData] = []
     var status:[String] = []
-    var index:Int = 0
     
     init(currentData: [PageData]) {
-        self.index = currentData.count
         for element in currentData {
             self.data.append(element)
             self.status.append("200")
@@ -57,9 +55,6 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let editable = tableColumn?.identifier == "Link" ? true : false
-        if (row >= self.index) {
-            return PrefView(frame: Cons.PrefView.frame, text: "", row: row, editable: editable, delegate: self)
-        }
         var text = self.status[row]
         if (tableColumn?.identifier == "Link") {
             text = self.data[row].id
@@ -79,16 +74,17 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
 extension PreferencesTableView: PrefFBPageDelegate {
     
     func insertFBID(row: Int, id: String) {
-//        FBPageAPI.sharedInstance.fetchStatus(id) { pageStatus in
-        let pageStatus = PageStatus(name: "HELLO", status: 401)
+        FBPageAPI.sharedInstance.fetchStatus(id) { pageStatus in
             self.status[row] = "\(pageStatus.status)"
             self.data[row].id = id
             self.data[row].name = pageStatus.name
             self.data.append(EmptyPageData)
             self.status.append("")
-        
-//        }
-        self.reloadData()
+            
+            DispatchQueue.main.async {
+                self.reloadData()
+            }
+        }
     }
     
 }

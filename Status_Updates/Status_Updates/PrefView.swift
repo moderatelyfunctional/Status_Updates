@@ -34,6 +34,6 @@ class PrefView: NSTextField, NSTextFieldDelegate {
         if (self.stringValue == "") {
             return
         }
-        self.prefDelegate.insertRow(row: self.row, id: self.stringValue)
+        self.prefDelegate.insertFBID(row: self.row, id: self.stringValue)
     }
 }
