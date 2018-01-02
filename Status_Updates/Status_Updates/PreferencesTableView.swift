@@ -65,8 +65,38 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         return PrefView(frame: Cons.PrefView.frame, text: text, row: row, editable: editable, delegate: self)
     }
     
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        return row == self.data.count - 1 ? false : true
+    }
+    
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return Cons.PrefView.height
+    }
+    
+}
+
+extension PreferencesTableView {
+    
+    func addFBPage() {
+        self.deselectAll(nil)
+        let row = self.data.count - 1
+        self.editColumn(0, row: row, with: nil, select: true)
+        self.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
+    }
+    
+    func removeFBPage() {
+        if (self.data.count == 1) {
+            return
+        }
+        let removeIndex = self.data.count - 2 // the last index is the empty row
+        let nextRemoveIndex = removeIndex - 1
+        self.data.remove(at: removeIndex)
+        self.status.remove(at: removeIndex)
+        if (nextRemoveIndex >= 0) {
+            self.selectRowIndexes(IndexSet(integer: nextRemoveIndex), byExtendingSelection: false)
+        }
+        self.reloadData()
+        
     }
     
 }

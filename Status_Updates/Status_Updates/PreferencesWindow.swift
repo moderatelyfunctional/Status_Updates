@@ -37,6 +37,7 @@ class PreferencesWindow: NSWindowController {
         self.window?.center()
         
         self.fb_button.action = #selector(self.add_api_key)
+        self.fb_pages_control.action = #selector(self.updatePreferences)
         self.pref_done_button.action = #selector(self.exit)
         
         self.window?.contentView?.addSubview(self.fb_access)
@@ -58,6 +59,15 @@ class PreferencesWindow: NSWindowController {
         FBPageAPI.sharedInstance.ACCESS_TOKEN = self.fb_access_input.stringValue
         self.fb_button_confirmation.stringValue = Cons.PrefConfirmation.text
         UserDefaults.standard.set(self.fb_access_input.stringValue, forKey: "FB_ACCESS_TOKEN")
+    }
+    
+    func updatePreferences() {
+        let selectedIndex = self.fb_pages_control.selectedSegment
+        if (selectedIndex == 0) {
+            self.fb_pages.prefTableView.addFBPage()
+        } else {
+            self.fb_pages.prefTableView.removeFBPage()
+        }
     }
     
     func exit() {
