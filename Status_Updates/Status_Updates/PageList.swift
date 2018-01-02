@@ -37,7 +37,7 @@ final class PageList {
         for page in PageList.sharedInstance.pageids {
             group.enter()
             DispatchQueue.global().async {
-                FBPageAPI.sharedInstance.fetchPage(page) { pageData in
+                FBPageAPI.sharedInstance.fetchPage(page) { _, pageData in
                     pageDataList.append(pageData)
                     group.leave()
                 }

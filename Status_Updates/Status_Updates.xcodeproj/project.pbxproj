@@ -16,6 +16,7 @@
 		DC4008621FF81AB500EC480E /* PrefButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4008611FF81AB500EC480E /* PrefButton.swift */; };
 		DC4008641FF862B500EC480E /* PrefScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4008631FF862B500EC480E /* PrefScroller.swift */; };
 		DC4008661FF86C1100EC480E /* PrefControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4008651FF86C1100EC480E /* PrefControl.swift */; };
+		DC6E00EA1FFC18E5007AC44D /* StatusReloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E00E91FFC18E5007AC44D /* StatusReloadDelegate.swift */; };
 		DC995B7B1FF22A6700747053 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B791FF22A6700747053 /* PreferencesWindow.swift */; };
 		DC995B7E1FF232FA00747053 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B7D1FF232FA00747053 /* TextLabel.swift */; };
 		DC995B821FF2CBEE00747053 /* PagesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC995B811FF2CBEE00747053 /* PagesTableView.swift */; };
@@ -43,6 +44,7 @@
 		DC4008611FF81AB500EC480E /* PrefButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefButton.swift; sourceTree = "<group>"; };
 		DC4008631FF862B500EC480E /* PrefScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefScroller.swift; sourceTree = "<group>"; };
 		DC4008651FF86C1100EC480E /* PrefControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefControl.swift; sourceTree = "<group>"; };
+		DC6E00E91FFC18E5007AC44D /* StatusReloadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusReloadDelegate.swift; sourceTree = "<group>"; };
 		DC995B791FF22A6700747053 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		DC995B7D1FF232FA00747053 /* TextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		DC995B811FF2CBEE00747053 /* PagesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesTableView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				DC995B791FF22A6700747053 /* PreferencesWindow.swift */,
 				DC4008631FF862B500EC480E /* PrefScroller.swift */,
 				DCE8F38C1FF9ED0C001B11B5 /* PrefReloadDelegate.swift */,
+				DC6E00E91FFC18E5007AC44D /* StatusReloadDelegate.swift */,
 				DC4008591FF717CD00EC480E /* PrefData.swift */,
 				DC29BD371FF466DF005EC7E1 /* PrefView.swift */,
 				DC4008651FF86C1100EC480E /* PrefControl.swift */,
@@ -219,6 +222,7 @@
 			files = (
 				DC995B931FF364CA00747053 /* PageScroller.swift in Sources */,
 				DC995B8D1FF34C5C00747053 /* Cons.swift in Sources */,
+				DC6E00EA1FFC18E5007AC44D /* StatusReloadDelegate.swift in Sources */,
 				DC4008641FF862B500EC480E /* PrefScroller.swift in Sources */,
 				DC4008601FF80C2200EC480E /* TextInput.swift in Sources */,
 				DCE8F38D1FF9ED0C001B11B5 /* PrefReloadDelegate.swift in Sources */,

@@ -8,12 +8,15 @@
 
 import Foundation
 
+typealias JSON = [String:AnyObject]
+
 class FBPageAPI {
     
     struct PageMeta {
         let name:String
         let likes:Int
         let updated:Date
+        let status:Int
     }
 
     let BASE_URL = "https://graph.facebook.com/v2.9"
@@ -25,6 +28,10 @@ class FBPageAPI {
         if let token = UserDefaults.standard.object(forKey: "FB_ACCESS_TOKEN") {
             self.ACCESS_TOKEN = token as! String
         }
+    }
+    
+    func metaFromError(status: Int) -> PageMeta {
+        return PageMeta(name: "", likes: 0, updated: Date(), status: status)
     }
     
     func metaFromJSON(_ data: Data) -> PageMeta? {
@@ -44,7 +51,7 @@ class FBPageAPI {
         let postList = posts["data"] as! [JSON]
         let postUpdated = postList[0]["created_time"] as! TimeInterval
         
-        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int, updated: Date(timeIntervalSince1970: postUpdated))
+        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int, updated: Date(timeIntervalSince1970: postUpdated), status: 200)
         return pageMeta
     }
     
@@ -65,8 +72,10 @@ class FBPageAPI {
                     }
                 case 401:
                     NSLog("FB API Unauthorized Error")
+                    success(self.metaFromError(status: 401))
                 default:
                     NSLog("FB API returned response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    success(self.metaFromError(status: httpResponse.statusCode))
                 }
             }
         }
@@ -115,11 +124,11 @@ class FBPageAPI {
         task.resume()
     }
     
-    func fetchPage(_ query: String, success: @escaping (PageData) -> Void) {
+    func fetchPage(_ query: String, success: @escaping (Int, PageData) -> Void) {
         self.fetchMeta(query) { pageMeta in
             self.fetchPosts(query) { pagePosts in
                 let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
-                success(pageData)
+                success(pageMeta.status, pageData)
             }
         }
     }

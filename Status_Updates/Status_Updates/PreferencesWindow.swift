@@ -10,6 +10,7 @@ import Cocoa
 
 class PreferencesWindow: NSWindowController {
     
+    var statusDelegate:StatusReloadDelegate!
     let fb_access = TextLabel(frame: Cons.PrefAccess.frame,
                               fontSize: Cons.PrefAccess.fontSize)
     let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
@@ -23,6 +24,7 @@ class PreferencesWindow: NSWindowController {
     let pref_done_button = PrefButton(frame: Cons.PrefButton.done_frame, title: "Done")
     
     init() {
+//        self.statusDelegate = statusDelegate
         super.init(window: NSWindow(contentRect: Cons.PrefWindow.frame,
                                     styleMask: .docModalWindow,
                                     backing: .nonretained,
@@ -84,9 +86,11 @@ class PreferencesWindow: NSWindowController {
             }
         }
         PageList.sharedInstance.data = pageDataList
+        PageList.sharedInstance.pageids = pageList
         UserDefaults.standard.set(pageList, forKey: "FB_PAGE_LIST")
         UserDefaults.standard.set(pageDataStringList, forKey: "FB_PAGE_DATA_LIST")
         
+        self.statusDelegate.dataTableView.reloadData()
         self.close()
     }
     

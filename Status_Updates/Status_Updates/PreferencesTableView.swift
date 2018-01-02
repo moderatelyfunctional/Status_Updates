@@ -85,6 +85,7 @@ extension PreferencesTableView {
     }
     
     func removeFBPage() {
+//        selected removal
         if (self.data.count == 1) {
             return
         }
@@ -102,13 +103,12 @@ extension PreferencesTableView {
 extension PreferencesTableView: PrefFBPageDelegate {
     
     func insertFBID(row: Int, id: String) {
-        FBPageAPI.sharedInstance.fetchStatus(id) { pageStatus in
-            self.status[row] = "\(pageStatus.status)"
-            self.data[row].id = id
-            self.data[row].name = pageStatus.name
+        FBPageAPI.sharedInstance.fetchPage(id) { pageStatus, pageData in
+            self.status[row] = "\(pageStatus)"
+            self.data[row] = pageData
             self.data.append(EmptyPageData)
             self.status.append("")
-            
+
             DispatchQueue.main.async {
                 self.reloadData()
             }

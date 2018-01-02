@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+class StatusMenuController: NSObject, StatusReloadDelegate {
 
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
@@ -16,6 +16,7 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     @IBOutlet weak var statusMenu: NSMenu!
     
     let preferencesWindow = PreferencesWindow()
+    var dataTableView = PagesTableView()
     
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSApplication.shared().terminate(self)
@@ -40,14 +41,10 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
         
         self.statusItem.image = icon
         self.statusItem.menu = statusMenu
-
-        self.pagesItem.view = PageScroller(tableView: PagesTableView())
+        self.preferencesWindow.statusDelegate = self
+        self.pagesItem.view = PageScroller(tableView: self.dataTableView)
     }
-    
 }
-
-
-
 
 
 
