@@ -13,7 +13,7 @@ class FBPageAPI {
     struct PageMeta {
         let name:String
         let likes:Int
-        let updated:NSDate
+        let updated:Date
     }
 
     let BASE_URL = "https://graph.facebook.com/v2.9"
@@ -44,7 +44,7 @@ class FBPageAPI {
         let postList = posts["data"] as! [JSON]
         let postUpdated = postList[0]["created_time"] as! TimeInterval
         
-        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int, updated: NSDate(timeIntervalSince1970: postUpdated))
+        let pageMeta = PageMeta(name: pageName as! String, likes: pageLikes as! Int, updated: Date(timeIntervalSince1970: postUpdated))
         return pageMeta
     }
     
@@ -88,7 +88,7 @@ class FBPageAPI {
     }
 
     func fetchPosts(_ query: String, success: @escaping (Int) -> Void) {
-        let timeUntil = round(NSDate().timeIntervalSince1970)
+        let timeUntil = round(Date().timeIntervalSince1970)
         let day:TimeInterval = 60 * 60 * 24
         let timeSince = timeUntil - day
         let session = URLSession.shared

@@ -64,15 +64,18 @@ class PreferencesWindow: NSWindowController {
         let prefTable = self.fb_pages.prefTableView
         var pageList:[String] = []
         var pageDataList:[PageData] = []
+        var pageDataStringList:[String] = []
         
         for (index, pageStatus) in prefTable.status.enumerated() {
             if (pageStatus == "200") {
                 pageList.append(prefTable.data[index].id)
                 pageDataList.append(prefTable.data[index])
+                pageDataStringList.append(compactPageData(pageData: prefTable.data[index]))
             }
         }
         PageList.sharedInstance.data = pageDataList
         UserDefaults.standard.set(pageList, forKey: "FB_PAGE_LIST")
+        UserDefaults.standard.set(pageDataStringList, forKey: "FB_PAGE_DATA_LIST")
         
         self.close()
     }

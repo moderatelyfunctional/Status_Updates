@@ -17,7 +17,12 @@ final class PageList {
     private init() {
         if let pageList = UserDefaults.standard.object(forKey: "FB_PAGE_LIST") {
             self.pageids = pageList as! [String]
-//            self.data = PageList.fetchData()
+        }
+        if let pageDataList = UserDefaults.standard.object(forKey: "FB_PAGE_DATA_LIST") {
+            let pageDataStringList = pageDataList as! [String]
+            for pageDataString in pageDataStringList {
+                self.data.append(pageDataFromString(pageString: pageDataString))
+            }
         }
     }
 

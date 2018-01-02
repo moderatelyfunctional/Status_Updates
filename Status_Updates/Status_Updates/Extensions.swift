@@ -9,11 +9,11 @@
 import Cocoa
 import Foundation
 
-extension NSDate {
+extension Date {
     
-    static func hoursPrior(currDate: NSDate) -> Int {
-        let now = NSDate()
-        let difference = -1 * now.timeIntervalSince(currDate as Date)
+    static func hoursPrior(currDate: Date) -> Int {
+        let now = Date()
+        let difference = -1 * now.timeIntervalSince(currDate)
         let secondsInHour = 3600.0
         
         let hours = difference / secondsInHour
@@ -31,6 +31,27 @@ extension String {
         return ceil(size.width) + 5
     }
     
+//    https://stackoverflow.com/questions/39677330/how-does-string-substring-work-in-swift
+    func index(from: Int) -> Index {
+        return self.index(startIndex, offsetBy: from)
+    }
+    
+    func substring(from: Int) -> String {
+        let fromIndex = index(from: from)
+        return substring(from: fromIndex)
+    }
+    
+    func substring(to: Int) -> String {
+        let toIndex = index(from: to)
+        return substring(to: toIndex)
+    }
+    
+    func substring(with r: Range<Int>) -> String {
+        let startIndex = index(from: r.lowerBound)
+        let endIndex = index(from: r.upperBound)
+        return substring(with: startIndex..<endIndex)
+    }
+    
 }
 
 extension Int {
@@ -38,22 +59,16 @@ extension Int {
 //    https://stackoverflow.com/questions/37335286/given-a-number-n-find-how-many-digits-in-that-number-are-useful-a-digit-in-the
     public var numDigits: Int {
         get {
-            return countDigits()
+            return numberOfDigits(in: self)
         }
     }
     
-    private func countDigits() -> Int {
-        var num = abs(self)
-        var count = 0
-        while num > 0 {
-            let digit = num % 10
-            if digit != 0 && self % digit == 0 {
-                count += 1
-            }
-            num = num / 10
+    private func numberOfDigits(in number: Int) -> Int {
+        if abs(number) < 10 {
+            return 1
+        } else {
+            return 1 + numberOfDigits(in: number/10)
         }
-        return count
     }
-
     
 }
