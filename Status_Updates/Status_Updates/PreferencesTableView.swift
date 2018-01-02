@@ -39,7 +39,9 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         self.addTableColumn(pageLinkColumn)
         self.addTableColumn(pageTitleColumn)
         self.addTableColumn(pageStatusColumn)
+        
         self.usesAlternatingRowBackgroundColors = true
+        self.allowsMultipleSelection = false
         
         self.delegate = self
         self.dataSource = self
@@ -85,7 +87,17 @@ extension PreferencesTableView {
     }
     
     func removeFBPage() {
-//        selected removal
+        let selectedRow = self.selectedRow
+        selectedRow == -1 ? removeLastRow() : removeSelectedRow(selectedRow: selectedRow)
+        self.reloadData()
+    }
+    
+    private func removeSelectedRow(selectedRow: Int) {
+        self.data.remove(at: selectedRow)
+        self.status.remove(at: selectedRow)
+    }
+    
+    private func removeLastRow() {
         if (self.data.count == 1) {
             return
         }
@@ -96,7 +108,6 @@ extension PreferencesTableView {
         if (nextRemoveIndex >= 0) {
             self.selectRowIndexes(IndexSet(integer: nextRemoveIndex), byExtendingSelection: false)
         }
-        self.reloadData()
     }
 }
 

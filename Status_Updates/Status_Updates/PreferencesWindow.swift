@@ -24,7 +24,6 @@ class PreferencesWindow: NSWindowController {
     let pref_done_button = PrefButton(frame: Cons.PrefButton.done_frame, title: "Done")
     
     init() {
-//        self.statusDelegate = statusDelegate
         super.init(window: NSWindow(contentRect: Cons.PrefWindow.frame,
                                     styleMask: .docModalWindow,
                                     backing: .nonretained,
