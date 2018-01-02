@@ -28,7 +28,7 @@ class StatusMenuController: NSObject, NSTableViewDelegate, NSTableViewDataSource
     }
 
     @IBAction func updateClicked(_ sender: NSMenuItem) {
-//        PageList.sharedInstance.data = PageList.fetchData()
+        PageList.sharedInstance.data = PageList.fetchData()
         let pageScroller = self.pagesItem.view as! PageScroller
         let pageTableView = pageScroller.documentView as! PagesTableView
         pageTableView.reloadData()

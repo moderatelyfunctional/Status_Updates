@@ -38,7 +38,7 @@ extension Int {
 //    https://stackoverflow.com/questions/37335286/given-a-number-n-find-how-many-digits-in-that-number-are-useful-a-digit-in-the
     public var numDigits: Int {
         get {
-            return numberOfDigits(in: self)
+            return countDigits()
         }
     }
     

@@ -5,7 +5,7 @@
 //  Created by Jing Lin on 12/26/17.
 //  Copyright © 2017 Jing Lin. All rights reserved.
 //
-import Foundation
+import Cocoa
 
 struct Cons {
     struct PageView {
@@ -60,6 +60,17 @@ struct Cons {
         
         static let set_frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: Cons.PrefAccess.height + 5)
         static let done_frame:NSRect = NSRect(x: offsetX, y: PrefControl.offsetY - 20, width: width, height: Cons.PrefAccess.height + 5)
+    }
+    struct PrefConfirmation {
+        static let offsetX:CGFloat = PrefAccessInput.offsetX
+        static let offsetY:CGFloat = PrefAccessInput.offsetY - PrefAccessInput.height
+        static let width:CGFloat = PrefAccessInput.width
+        static let height:CGFloat = PrefAccessInput.height
+        
+        static let text:String = "Facebook API Key Set"
+        static let textColor:NSColor = NSColor.gray
+        
+        static let frame:NSRect = NSRect(x: offsetX, y: offsetY, width: width, height: height)
     }
     struct PrefSeparators {
         static let first:NSRect = NSRect(x: PrefAccess.offsetX, y: PrefAccess.offsetY - 30, width: PrefWindow.width - 2 * PrefAccess.offsetX, height: 1.0)

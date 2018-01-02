@@ -24,7 +24,7 @@ class PreferencesTableView: NSTableView, NSTableViewDelegate, NSTableViewDataSou
         super.init(frame: NSRect(x: 0, y: 0, width: Cons.PrefScroller.width, height: Cons.PrefScroller.height))
         
         let pageLinkColumn = NSTableColumn(identifier: "Link")
-        pageLinkColumn.headerCell = NSTableHeaderCell(textCell: "Page Link")
+        pageLinkColumn.headerCell = NSTableHeaderCell(textCell: "Page ID")
         pageLinkColumn.width = Cons.PrefScroller.width * 0.3
         
         let pageTitleColumn = NSTableColumn(identifier: "Title")

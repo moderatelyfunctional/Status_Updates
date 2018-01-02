@@ -15,6 +15,7 @@ class PreferencesWindow: NSWindowController {
     let fb_access_input = TextInput(frame: Cons.PrefAccessInput.frame,
                                     setPlaceholder: true)
     let fb_button = PrefButton(frame: Cons.PrefButton.set_frame, title: "Set")
+    let fb_button_confirmation = TextLabel(frame: Cons.PrefConfirmation.frame, fontSize: 12)
     let first_separator = NSBox(frame: Cons.PrefSeparators.first)
     
     let fb_pages = PrefScroller(frame: Cons.PrefScroller.frame)
@@ -28,6 +29,7 @@ class PreferencesWindow: NSWindowController {
                                     defer: false))
         
         self.fb_access.stringValue = Cons.PrefAccess.text
+        self.fb_button_confirmation.textColor = Cons.PrefConfirmation.textColor
         self.first_separator.boxType = .primary
         
         self.window?.title = "Preferences"
@@ -40,6 +42,7 @@ class PreferencesWindow: NSWindowController {
         self.window?.contentView?.addSubview(self.fb_access)
         self.window?.contentView?.addSubview(self.fb_access_input)
         self.window?.contentView?.addSubview(self.fb_button)
+        self.window?.contentView?.addSubview(self.fb_button_confirmation)
         self.window?.contentView?.addSubview(self.first_separator)
         
         self.window?.contentView?.addSubview(self.fb_pages)
@@ -53,6 +56,7 @@ class PreferencesWindow: NSWindowController {
     
     func add_api_key() {
         FBPageAPI.sharedInstance.ACCESS_TOKEN = self.fb_access_input.stringValue
+        self.fb_button_confirmation.stringValue = Cons.PrefConfirmation.text
         UserDefaults.standard.set(self.fb_access_input.stringValue, forKey: "FB_ACCESS_TOKEN")
     }
     

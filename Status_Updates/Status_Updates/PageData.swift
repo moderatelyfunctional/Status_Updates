@@ -24,6 +24,7 @@ func compactPageData(pageData: PageData) -> String {
     let likes_end = name_end + pageData.likes.numDigits
     let update_end = likes_end + pageData.updated.description.characters.count
     let nPosts_end = update_end + pageData.nPosts.numDigits
+    let compactData = "\(pageData.id)\(pageData.name)\(pageData.likes)\(pageData.updated)\(pageData.nPosts)"
     
-    return "hello"
+    return "\(id_end):\(name_end):\(likes_end):\(update_end):\(nPosts_end):\(compactData)"
 }
