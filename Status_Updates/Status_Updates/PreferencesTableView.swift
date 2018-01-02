@@ -96,9 +96,7 @@ extension PreferencesTableView {
             self.selectRowIndexes(IndexSet(integer: nextRemoveIndex), byExtendingSelection: false)
         }
         self.reloadData()
-        
     }
-    
 }
 
 extension PreferencesTableView: PrefFBPageDelegate {
@@ -118,13 +116,4 @@ extension PreferencesTableView: PrefFBPageDelegate {
     }
     
 }
-
-
-
-
-
-
-
-
-
 
