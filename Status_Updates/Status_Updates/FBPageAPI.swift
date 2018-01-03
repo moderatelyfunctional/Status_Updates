@@ -126,53 +126,17 @@ class FBPageAPI {
     
     func fetchPage(_ query: String, success: @escaping (Int, PageData) -> Void) {
         self.fetchMeta(query) { pageMeta in
-            self.fetchPosts(query) { pagePosts in
-                let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
-                success(pageMeta.status, pageData)
-            }
-        }
-    }
-    
-    func statusFromJSON(_ data: Data) -> PageStatus? {
-        let json:JSON
-        
-        do {
-            json = try JSONSerialization.jsonObject(with: data, options: []) as! JSON
-        } catch {
-            NSLog("JSON parsing failed: \(error)")
-            return nil
-        }
-        
-        return PageStatus(name: json["name"] as! String, status: 200)
-    }
-    
-    func fetchStatus(_ query: String, success: @escaping (PageStatus) -> Void) {
-        let session = URLSession.shared
-        let rawURLStr = "\(BASE_URL)/\(query)?access_token=\(ACCESS_TOKEN)&fields=name"
-        let escapedURL = rawURLStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let url = URL(string: escapedURL!)
-        let task = session.dataTask(with: url!) { data, response, err in
-            if let error = err {
-                NSLog("FB API Error: \(error)")
-                success(PageStatus(name: "", status: 0))
-            }
-            if let httpResponse = response as? HTTPURLResponse {
-                switch httpResponse.statusCode {
-                case 200:
-                    if let pageStatus = self.statusFromJSON(data!) {
-                        success(pageStatus)
-                    }
-                case 401:
-                    NSLog("FB API Unauthorized Error")
-                    success(PageStatus(name: "", status: 401))
-                default:
-                    NSLog("FB API returned response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                    success(PageStatus(name: "", status: httpResponse.statusCode))
+            var numPosts = -1
+            if (pageMeta.status == 200) {
+                self.fetchPosts(query) { pagePosts in
+                    numPosts = pagePosts
                 }
             }
+            let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: numPosts)
+            success(pageMeta.status, pageData)
         }
-        task.resume()
     }
+
 }
 
 
