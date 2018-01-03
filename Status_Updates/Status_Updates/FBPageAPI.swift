@@ -126,14 +126,15 @@ class FBPageAPI {
     
     func fetchPage(_ query: String, success: @escaping (Int, PageData) -> Void) {
         self.fetchMeta(query) { pageMeta in
-            var numPosts = -1
             if (pageMeta.status == 200) {
                 self.fetchPosts(query) { pagePosts in
-                    numPosts = pagePosts
+                    let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: pagePosts)
+                    success(pageMeta.status, pageData)
                 }
+            } else {
+                let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: -1)
+                success(pageMeta.status, pageData)
             }
-            let pageData = PageData(id: query, name: pageMeta.name, likes: pageMeta.likes, updated: pageMeta.updated, nPosts: numPosts)
-            success(pageMeta.status, pageData)
         }
     }
 
