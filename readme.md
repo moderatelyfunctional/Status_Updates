@@ -8,17 +8,29 @@ Coming soon!
 ## Usage
 First, you need to obtain your Facebook API access key. Once you do, open the preferences to enter your Facebook API access key, then click on 'Set'.
 
+![AddingAPIKey](doc_images/add_api_key.png)
+
 To add a new Facebook page, click on '+' at the bottom of pane. Click on the 'Page ID' cell to enter the page ID and press the enter key. 
+
+![AddingPage](doc_images/add_page.png)
 
 For example, if the page link is https://www.facebook.com/beaverconfessions/, then the page ID is 'beaverconfessions'.
 
 You will see the page name under 'Title' and the response status from Facebook API under 'Status'. The status code is 200 if there's no problem, 401 if your access is unauthorized, and 404 if the page is not found. 
 
+![PageStatus](doc_images/page_status.png)
+
 To remove a Facebook page, click on the row you want to remove, then click on '-' at the bottom of pane.
+
+![RemovingPage](doc_images/remove_page.png)
 
 Click on 'Done' to save your changes and exit the preferences. <i>Do NOT exit by clicking on the red exit button on the left top corner of pane. It will not save your changes.</i>
 
+![SavingChanges](doc_images/exit_pref.png)
+
 Click on 'Refresh' to fetch the latest updates from your favorite pages. You will see how many likes the pages have, how many posts they have published in the last 24 hours, and when their most recent posts were published.
+
+![Refreshing](doc_images/refresh.png)
 
 ## Obtaining Facebook API access key
 
