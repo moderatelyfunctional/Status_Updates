@@ -6,21 +6,17 @@
 	<dict>
 		<key>Resources/Assets.car</key>
 		<data>
-		sgE4xCHOW2Dmui22hs99mnPo540=
+		xzxDc6gCh3yjpzystuyqMEeo4Pk=
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zM2yPn1v1cNhRwkKUAzs3vEaaZU=
+			SV0kXDWTu4yIM4ZpdyHQ70PB3ck=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>Resources/PreferencesWindow.nib</key>
-		<data>
-		C3ms1tfCqHwLV4GgF6k/dO7DZI4=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -136,36 +132,25 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sgE4xCHOW2Dmui22hs99mnPo540=
+			xzxDc6gCh3yjpzystuyqMEeo4Pk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0DipXqf9VkjQhmnqr+Cg/tk37YsTsZaDKAHAq5Nh9Ns=
+			FT9Oh3KJN3uy9JO458gSzSWLJL6Q+zUNjCjrj1LtUkI=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zM2yPn1v1cNhRwkKUAzs3vEaaZU=
+			SV0kXDWTu4yIM4ZpdyHQ70PB3ck=
 			</data>
 			<key>hash2</key>
 			<data>
-			03rml+xmtzSi4Ia/x66SL9gntQQ1w0vBQuvsYZMipyc=
+			c126sT9eNxbrbUDG/Pg+OuxlHk6o3pDCoMkrVd57Tbc=
 			</data>
 			<key>optional</key>
 			<true/>
-		</dict>
-		<key>Resources/PreferencesWindow.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			C3ms1tfCqHwLV4GgF6k/dO7DZI4=
-			</data>
-			<key>hash2</key>
-			<data>
-			TAn2CutVIGcG38qwneWxTGHN8gSlfJHKyE9ioUrhGo0=
-			</data>
 		</dict>
 	</dict>
 	<key>rules</key>

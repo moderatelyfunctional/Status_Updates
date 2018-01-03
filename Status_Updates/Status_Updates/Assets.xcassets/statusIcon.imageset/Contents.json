@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "c18.png",
+      "filename" : "whale_status_icon_18.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "c36.png",
+      "filename" : "whale_status_icon_36.png",
       "scale" : "2x"
     },
     {
