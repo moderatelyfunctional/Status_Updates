@@ -3,7 +3,7 @@
 Whale is a macOS (version 10.11.5 and later) menu bar app for getting updates on your favorite Facebook pages.
 
 ## Installation
-Coming soon!
+<!-- Not done yet -->
 
 ## Usage
 First, obtain a Facebook Graph API Access Key. Then open the Preferences pane, enter the key and click `Set`.
